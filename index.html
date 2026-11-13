@@ -1,71 +1,173 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#fff5e9">
-<meta name="description" content="Glue Guns & Gossip — playful handmade gifts, 3D printed treasures, crafty kits, and seasonal surprises. Coming soon!">
-<title>Coming Soon | Glue Guns & Gossip</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght,SOFT,WONK@9..144,700,40,1;9..144,800,40,1&display=swap');
-:root{--ink:#30241f;--cream:#fff5e9;--pink:#f5a7b7;--coral:#f37b70;--yellow:#ffcf69;--green:#b4d9aa;--lilac:#d9c4f6;--white:#fffefa}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:var(--cream);color:var(--ink);font-family:'DM Sans',Arial,sans-serif;overflow-x:hidden}.texture{position:fixed;inset:0;pointer-events:none;opacity:.23;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.12' filter='url(%23n)'/%3E%3C/svg%3E");z-index:10}header{max-width:1180px;margin:auto;padding:25px 34px;display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;z-index:3}.logo{font-family:Fraunces,Georgia,serif;font-size:20px;line-height:1.1;letter-spacing:-.8px;font-weight:800}.logo span{color:#dc625b}.chip{border:2px solid var(--ink);border-radius:50px;padding:9px 15px;background:var(--yellow);font-weight:800;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;transform:rotate(3deg);box-shadow:3px 3px 0 var(--ink)}main{position:relative;max-width:1180px;margin:0 auto;padding:36px 34px 0}.hero{min-height:570px;display:grid;grid-template-columns:1.04fr .96fr;gap:24px;align-items:center}.eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:3px;font-size:12px;display:flex;align-items:center;gap:12px}.eyebrow:before{content:'';width:36px;height:3px;background:var(--coral);display:inline-block}h1{font-family:Fraunces,Georgia,serif;font-size:clamp(57px,7.3vw,105px);line-height:.96;letter-spacing:-4.8px;margin:23px 0 20px;font-weight:800}h1 .pink{color:#e4778a}h1 .green{color:#6b9b70}.lead{max-width:485px;font-size:19px;line-height:1.65;color:#62514b;margin:0 0 27px}.banner{display:inline-flex;background:var(--ink);color:white;border-radius:12px;padding:13px 18px;font-weight:800;font-size:15px;box-shadow:5px 5px 0 var(--pink);transform:rotate(-1deg)}.fine{font-size:13px;color:#79665d;margin-top:26px}.art{height:535px;position:relative;display:flex;align-items:center;justify-content:center}.blob{width:min(100%,490px);aspect-ratio:1/1;background:#f7cbd4;border-radius:48% 52% 54% 46%/43% 45% 55% 57%;border:3px solid var(--ink);box-shadow:13px 13px 0 var(--ink);transform:rotate(-5deg);position:absolute}.art svg{position:relative;z-index:2;width:min(110%,520px);height:auto;filter:drop-shadow(0px 10px 0px rgba(48,36,31,.1))}.star{position:absolute;z-index:3;font-size:40px;line-height:1}.s1{top:24px;left:6%;color:var(--coral)}.s2{right:5%;top:28px;color:#f9b946}.s3{right:5%;bottom:52px;color:#83ac85}.small-label{position:absolute;z-index:4;background:var(--yellow);border:2px solid var(--ink);padding:13px 17px;border-radius:9px;box-shadow:4px 4px 0 var(--ink);font-size:14px;font-weight:800;transform:rotate(8deg);right:-2%;top:80px}.strip{margin:50px -34px 0;background:var(--ink);color:#fff7ee;padding:20px 0;overflow:hidden;transform:rotate(-1deg);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}.strip-inner{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;font-size:13px;letter-spacing:2px;font-weight:800;text-transform:uppercase}.strip b{color:var(--yellow);font-size:21px;line-height:12px}.section{padding:80px 0 55px;text-align:center}.section h2{font:800 clamp(33px,4vw,48px)/1.1 Fraunces,Georgia,serif;letter-spacing:-1.7px;margin:0 0 12px}.section p{margin:0 auto 30px;max-width:560px;color:#705c53;line-height:1.6}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left}.card{border:2px solid var(--ink);border-radius:20px;padding:25px;min-height:205px;box-shadow:5px 5px 0 var(--ink)}.card:nth-child(1){background:#d8efcf}.card:nth-child(2){background:#ffe5a7}.card:nth-child(3){background:#e4d5f5}.card .symbol{font-size:34px;display:block;margin-bottom:23px}.card h3{font:800 25px Fraunces,Georgia,serif;margin:0 0 8px;letter-spacing:-.8px}.card p{font-size:14px;margin:0;color:#51433f}.footer{border-top:2px dashed #c6a89b;padding:29px 0 45px;display:flex;justify-content:space-between;gap:10px;font-size:13px;color:#6e5d54}.footer strong{color:var(--ink)}.hearts{letter-spacing:4px;color:#e4778a} @media(max-width:820px){header{padding:21px 24px}main{padding:10px 24px 0}.hero{grid-template-columns:1fr;gap:0;text-align:center}.eyebrow{justify-content:center}h1{font-size:clamp(55px,12vw,80px);letter-spacing:-3px}.lead{margin-left:auto;margin-right:auto;font-size:17px}.art{height:410px;max-width:500px;width:100%;margin:auto}.blob{width:360px;max-width:90%}.art svg{width:400px;max-width:105%}.strip{margin:20px -24px 0}.cards{grid-template-columns:1fr}.card{min-height:0}.footer{flex-direction:column;text-align:center;align-items:center}.small-label{right:0;top:20px}}@media(max-width:450px){.logo{font-size:16px}.chip{font-size:9px;padding:8px 10px}h1{font-size:53px}.art{height:330px}.small-label{font-size:11px}.strip-inner{gap:12px;font-size:10px}.section{padding:60px 0 40px}}@media(prefers-reduced-motion:no-preference){.star{animation:twinkle 3s ease-in-out infinite alternate}.s2{animation-delay:1s}.s3{animation-delay:2s}@keyframes twinkle{to{transform:scale(1.18) rotate(17deg)}}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#4d241a" />
+  <meta name="description" content="Gobble Grams: send a little Thanksgiving cheer to staff and residents. See the flyer, choose a gift, and find Cash App payment information." />
+  <title>Gobble Grams | The Who Crew</title>
+  <style>
+    :root { --brown: #4d241a; --orange: #bb4d16; --ochre: #ec9a32; --cream: #fff6e9; --pale: #ffe9d1; --red: #9b2f23; --white:#ffffff; }
+    * {box-sizing:border-box}
+    html {scroll-behavior:smooth}
+    body {margin:0; color:var(--brown); background:var(--cream); font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.55}
+    a {color:inherit}
+    a:focus-visible, button:focus-visible {outline:3px solid #16734c; outline-offset:4px}
+    .wrap {width:min(1100px,calc(100% - 36px)); margin:auto}
+    .topline {background:var(--brown); color:#fff7e8; text-align:center; padding:10px 12px; font-size:0.86rem; font-weight:750; letter-spacing:.10em; text-transform:uppercase}
+    .hero {position:relative; overflow:hidden; color:white; background:radial-gradient(circle at 85% 10%,rgba(245,166,57,.60),transparent 32%),linear-gradient(120deg,#772a1f,#bf5219 62%,#d97d2d); border-bottom:7px solid #efb85a}
+    .hero:before,.hero:after {content:"✦"; position:absolute; font-size:12rem; color:#ffcf7d; opacity:.11; pointer-events:none}
+    .hero:before {top:-130px; left:-38px; transform:rotate(18deg)}
+    .hero:after {right:-10px; bottom:-150px; transform:rotate(-20deg)}
+    .hero-inner {display:grid; grid-template-columns:1.15fr .85fr; gap:26px; align-items:center; padding:58px 0 64px; position:relative; z-index:1}
+    .eyebrow {text-transform:uppercase; font-size:.9rem; letter-spacing:.14em; font-weight:800; color:#ffdfb0}
+    h1 {font-size:clamp(3.25rem,7vw,6.2rem); letter-spacing:-.06em; line-height:.97; margin:14px 0 22px; text-wrap:balance; text-shadow:0 4px 0 rgba(80,28,10,.3)}
+    .hero p {font-size:clamp(1.08rem,2vw,1.4rem); max-width:540px; margin:0 0 24px; color:#fff8e9}
+    .button-row {display:flex; flex-wrap:wrap; gap:12px}
+    .btn {display:inline-flex; align-items:center; justify-content:center; gap:9px; border:2px solid transparent; border-radius:999px; padding:13px 22px; font-weight:800; font-size:1rem; line-height:1.3; text-decoration:none; cursor:pointer; transition:transform .15s ease, background .15s ease; font-family:inherit}
+    .btn:hover {transform:translateY(-2px)}
+    .btn-primary {background:#ffdc8c; color:#58221d; box-shadow:0 4px 0 #9b421c}
+    .btn-outline {color:white; border-color:#ffe4b6; background:rgba(56,23,15,.12)}
+    .btn-dark {color:#fff; background:var(--brown)}
+    .hero-art {background:rgba(255,255,255,.12); padding:13px; border-radius:24px; border:2px solid rgba(255,255,255,.23); transform:rotate(2deg); box-shadow:0 18px 40px rgba(70,23,7,.28)}
+    .hero-art img {display:block; width:100%; height:auto; border-radius:13px}
+    .section {padding:62px 0}
+    .section-label {text-transform:uppercase; color:var(--orange); font-size:.82rem; letter-spacing:.14em; font-weight:900; margin:0 0 8px}
+    h2 {font-size:clamp(2rem,4vw,3rem); line-height:1.12; margin:0 0 14px; letter-spacing:-.045em}
+    .section-lead {font-size:1.05rem; color:#6b5144; max-width:730px; margin:0 0 28px}
+    .tiers {display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+    .tier {position:relative; background:#fff; border:2px solid #f0d9bd; border-radius:20px; padding:24px 20px 22px; box-shadow:0 5px 16px rgba(81,46,23,.045); display:flex; flex-direction:column; align-items:flex-start; min-height:230px}
+    .tier:nth-child(4) {border-color:#b4cc6e; background:#fbfff0}
+    .price {border-radius:16px; padding:3px 12px; background:#fff0cf; color:#883816; font-size:2.2rem; font-weight:950; line-height:1.25; margin-bottom:14px; letter-spacing:-.05em}
+    .tier:nth-child(4) .price {background:#e2f1b3; color:#49601f}
+    .tier h3 {font-size:1.17rem; line-height:1.27; margin:0 0 10px}
+    .tier p {font-size:.92rem; margin:0; color:#6a554a}
+    .mini {background:#fffaf3; border-radius:16px; padding:20px; border:1px solid #efddc7; margin-top:20px; font-size:.98rem}
+    .flyer-area {background:linear-gradient(180deg,#ffeed8,#fff9f0); border-block:1px solid #efddc7}
+    .flyer-grid {display:grid; grid-template-columns:minmax(0,1fr) 270px; gap:35px; align-items:start}
+    .poster-frame {background:white; padding:12px; border-radius:22px; box-shadow:0 15px 42px rgba(85,49,24,.16); border:1px solid #f4d7af}
+    .poster-frame img {width:100%; height:auto; display:block; border-radius:12px}
+    .aside {position:sticky; top:16px; background:#fff; padding:23px; border-radius:20px; border:1px solid #efdcba}
+    .aside h3 {margin:0 0 12px; font-size:1.23rem}
+    .aside ul {padding-left:22px; margin:0 0 22px}
+    .aside li {margin-bottom:11px}
+    .payment {background:#4b231a; color:white}
+    .payment-wrap {display:grid; grid-template-columns:1.15fr .85fr; gap:45px; align-items:center}
+    .payment .section-label {color:#ffce87}
+    .payment p {color:#f9e3d0}
+    .cashname {font-size:clamp(1.5rem,3.6vw,2.2rem); font-weight:850; margin:10px 0 20px; color:#ffd989; word-break:break-word}
+    .cash-photo {background:white; padding:16px; border-radius:22px; box-shadow:0 12px 30px rgba(0,0,0,.2)}
+    .cash-photo img {display:block; width:min(100%,420px); max-height:470px; height:auto; object-fit:contain; margin:0 auto}
+    .payment-notice {border-left:4px solid #ffc15e; padding:12px 15px; background:#65372c; border-radius:0 10px 10px 0; font-size:.95rem; color:#fff9f0; margin:25px 0}
+    .payment .btn-primary {box-shadow:none}
+    .payment .btn-outline {background:transparent}
+    .small {font-size:.88rem; opacity:.85}
+    .footer {padding:26px 0; font-size:.87rem; background:#321a15; color:#ebd4bd; text-align:center}
+    @media (max-width:850px) {
+      .hero-inner, .payment-wrap {grid-template-columns:1fr}
+      .hero-inner {padding:42px 0 54px}
+      .hero-art {max-width:390px; width:88%; justify-self:center; transform:rotate(1deg)}
+      .tiers {grid-template-columns:repeat(2,1fr)}
+      .flyer-grid {grid-template-columns:1fr}
+      .aside {position:static}
+      .payment-wrap {gap:25px}
+      .cash-photo {max-width:440px; justify-self:center; width:100%}
+    }
+    @media (max-width:480px) {
+      .wrap {width:min(100% - 28px,1100px)}
+      .section {padding:44px 0}
+      .tiers {grid-template-columns:1fr}
+      .tier {min-height:0}
+      .hero-art {width:100%}
+      .btn {width:100%}
+    }
+    @media (prefers-reduced-motion:reduce) {html{scroll-behavior:auto} .btn{transition:none}}
+    @media print { .topline,.hero-art,.button-row,.aside,.payment,.footer,.tiers,.mini {display:none!important} .hero,.flyer-area {background:white;color:black;border:0} .hero-inner {padding:0} .hero h1 {font-size:26px;text-shadow:none;color:black} .hero p,.eyebrow {color:black} .section {padding:0} .poster-frame {box-shadow:none;border:none; padding:0} }
+  </style>
 </head>
 <body>
-<div class="texture" aria-hidden="true"></div>
-<header><div class="logo">Glue Guns <span>&</span><br>Gossip<span>.</span></div><div class="chip">Something crafty is brewing</div></header>
-<main>
-<section class="hero" aria-label="Coming soon announcement">
-<div>
-<div class="eyebrow">A little mess. A lot of magic.</div>
-<h1>Good things<br>are <span class="pink">getting</span><br><span class="green">glued.</span></h1>
-<p class="lead">We’re making something fun! Think crafty creations, 3D-printed goodies, handmade gifts, and seasonal surprises—with plenty of gossip along the way.</p>
-<div class="banner">Our little shop is COMING SOON!</div>
-<p class="fine">Made with creativity, caffeine & a questionable amount of craft supplies.</p>
-</div>
-<div class="art" aria-label="Illustration of a glue gun, yarn, scissors and creative supplies">
-<div class="blob"></div><span class="star s1" aria-hidden="true">✳</span><span class="star s2" aria-hidden="true">✦</span><span class="star s3" aria-hidden="true">✳</span><div class="small-label">MADE WITH ♥<br>& A LITTLE CHAOS</div>
-<svg viewBox="0 0 530 530" role="img" aria-label="Colorful craft tools and supplies">
-<!-- yarn ball -->
-<circle cx="145" cy="345" r="84" fill="#c4a8e9" stroke="#30241f" stroke-width="7"/>
-<path d="M80 327c35-61 98-67 128-35M72 359c46-30 122-36 152 3M104 415c7-66 43-125 88-130M155 425c-5-57 12-110 49-129" fill="none" stroke="#8266b5" stroke-width="7" stroke-linecap="round"/>
-<path d="M155 424c45 40 73 35 101 54" fill="none" stroke="#30241f" stroke-width="5" stroke-linecap="round"/>
-<!-- glue gun -->
-<g transform="rotate(-18 294 250)">
-<path d="M220 201h175q14 0 14 14v65q0 15-15 15h-75l-18 105q-2 14-16 14h-42q-13 0-12-15l10-104h-23q-15 0-15-15v-65q0-14 17-14Z" fill="#f8c364" stroke="#30241f" stroke-width="8" stroke-linejoin="round"/>
-<path d="M406 223h64v46h-64" fill="#f37d73" stroke="#30241f" stroke-width="7" stroke-linejoin="round"/>
-<path d="M467 242l24 5-24 7" fill="#f5a7b7" stroke="#30241f" stroke-width="6" stroke-linejoin="round"/>
-<path d="M260 295v40h-25" fill="none" stroke="#30241f" stroke-width="7" stroke-linecap="round"/>
-<rect x="244" y="222" width="98" height="43" rx="21" fill="#fff4e9" stroke="#30241f" stroke-width="6"/>
-<path d="M273 246c11-16 26-16 36 0-12 17-25 17-36 0Z" fill="#f192a4"/>
-<path d="M340 231h35" stroke="#30241f" stroke-width="6" stroke-linecap="round"/>
-<path d="M294 401q25 45 48 17" fill="none" stroke="#30241f" stroke-width="5" stroke-linecap="round"/>
-</g>
-<!-- scissors -->
-<g transform="rotate(20 392 385)">
-<ellipse cx="361" cy="402" rx="23" ry="32" fill="none" stroke="#30241f" stroke-width="9"/>
-<ellipse cx="407" cy="402" rx="23" ry="32" fill="none" stroke="#30241f" stroke-width="9"/>
-<path d="M381 378 354 299l49 69M392 378l46-80-30 79" fill="#e9e8e4" stroke="#30241f" stroke-width="6" stroke-linejoin="round"/>
-<circle cx="389" cy="381" r="6" fill="#30241f"/>
-</g>
-<!-- sparkle details -->
-<path d="M132 159l8-24 8 24 24 8-24 8-8 24-8-24-24-8Z" fill="#fff9e3" stroke="#30241f" stroke-width="4"/>
-<path d="M406 139l7-21 7 21 21 7-21 7-7 21-7-21-21-7Z" fill="#a9dfc4" stroke="#30241f" stroke-width="4"/>
-<path d="M262 116l5-15 5 15 15 5-15 5-5 15-5-15-15-5Z" fill="#f37d73" stroke="#30241f" stroke-width="3"/>
-<path d="M75 256c17-17 32-16 44-8" stroke="#30241f" stroke-width="5" fill="none" stroke-linecap="round"/>
-<circle cx="453" cy="345" r="9" fill="#ef9d9e" stroke="#30241f" stroke-width="3"/>
-<circle cx="212" cy="160" r="8" fill="#99c796" stroke="#30241f" stroke-width="3"/>
-</svg>
-</div>
-</section>
-<div class="strip" aria-label="Our specialties"><div class="strip-inner"><span>Handmade happiness</span><b>✳</b><span>Crafty little treasures</span><b>✳</b><span>Made just for fun</span></div></div>
-<section class="section"><h2>What’s on the craft table?</h2><p>A sneak peek at the fun we’re dreaming up.</p><div class="cards">
-<div class="card"><span class="symbol" aria-hidden="true">✂️</span><h3>Handmade gifts</h3><p>One-of-a-kind goodies with personality, charm, and a little sparkle.</p></div>
-<div class="card"><span class="symbol" aria-hidden="true">✳️</span><h3>3D-printed fun</h3><p>Clever little creations, accessories, fidgets, and giftable surprises.</p></div>
-<div class="card"><span class="symbol" aria-hidden="true">🎀</span><h3>Seasonal mischief</h3><p>Festive kits, holiday finds, and crafty ideas worth talking about.</p></div>
-</div></section>
-<footer class="footer"><strong>Glue Guns & Gossip © <span id="year">2026</span></strong><span>gluegunsandgossip.com</span><span class="hearts" aria-hidden="true">♥ ✳ ♥</span></footer>
-</main>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <div class="topline">The Who Crew · Thanksgiving Cheer</div>
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <div class="eyebrow">A little message. A lot of kindness.</div>
+        <h1>Gobble<br>Grams!</h1>
+        <p>Surprise a staff member or resident with a cheerful message, treat, or special gift this Thanksgiving.</p>
+        <div class="button-row">
+          <a class="btn btn-primary" href="#packages">See gift options ↓</a>
+          <a class="btn btn-outline" href="#pay">Cash App payment ↓</a>
+        </div>
+      </div>
+      <div class="hero-art"><img src="gobblegram.jpg" alt="Gobble Gram flyer featuring packages from $1 to $5 and Thanksgiving-themed gift examples" /></div>
+    </div>
+  </header>
+
+  <main>
+    <section id="packages" class="section">
+      <div class="wrap">
+        <p class="section-label">Pick a little surprise</p>
+        <h2>Four ways to spread cheer</h2>
+        <p class="section-lead">Choose your Gobble Gram package, then give your order details to a member of the Who Crew.</p>
+        <div class="tiers">
+          <article class="tier"><div class="price">$1</div><h3>Something sweet</h3><p>Message + small candy.</p></article>
+          <article class="tier"><div class="price">$2</div><h3>A bigger treat</h3><p>Message + candy bar or Rice Krispies Treat.</p></article>
+          <article class="tier"><div class="price">$3</div><h3>A little keepsake</h3><p>Message + small candy + 3D printed item.</p></article>
+          <article class="tier"><div class="price">$5</div><h3>The ultimate Gobble Gram</h3><p>Message + drink of choice + snack or candy + 3D printed item + fun pen.</p></article>
+        </div>
+        <div class="mini"><strong>3D printed choices:</strong> Flat flexi turkey, turkey with flexi legs, flexi hand keychain, octagon fidget keychain, star keychain, heart keychain, or mini Crocs keychain. See the flyer for examples.</div>
+      </div>
+    </section>
+
+    <section class="section flyer-area" id="flyer">
+      <div class="wrap">
+        <p class="section-label">The original flyer</p>
+        <h2>See all the Gobble Gram goodies</h2>
+        <p class="section-lead">Zoom in for gift examples and package details. The flyer below is the original image, not a recreated version.</p>
+        <div class="flyer-grid">
+          <div class="poster-frame"><a href="gobblegram.jpg" target="_blank" rel="noopener" aria-label="Open the full-size Gobble Gram flyer"><img loading="lazy" src="gobblegram.jpg" alt="Original Gobble Gram flyer with $1, $2, $3, and $5 options and pictures of candy, 3D prints, drinks, and pens" /></a></div>
+          <aside class="aside">
+            <h3>How to order</h3>
+            <ul>
+              <li><strong>Choose</strong> a $1, $2, $3, or $5 package.</li>
+              <li><strong>Tell the Who Crew</strong> who the gift is for and what message you'd like included.</li>
+              <li><strong>Pay</strong> using the Cash App code below, or follow the payment instructions from your Who Crew contact.</li>
+            </ul>
+            <a href="gobblegram.jpg" target="_blank" rel="noopener" class="btn btn-dark">Open full-size flyer ↗</a>
+            <p class="small">Payment does not automatically submit an order.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section payment" id="pay">
+      <div class="wrap payment-wrap">
+        <div>
+          <p class="section-label">Ready to spread some kindness?</p>
+          <h2>Pay with Cash App</h2>
+          <p>Scan the code using Cash App, or search for the $Cashtag shown below.</p>
+          <div class="cashname" id="cashtag">$GeeZoMathis</div>
+          <div class="button-row">
+            <button type="button" id="copy-cashtag" class="btn btn-primary">Copy $Cashtag</button>
+            <a href="https://cash.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Open Cash App ↗</a>
+          </div>
+          <div class="payment-notice"><strong>Important:</strong> Give your Gobble Gram order to the Who Crew before or when you pay. A Cash App payment by itself does <em>not</em> send an order. Double-check the Cash App recipient before paying. Please don't put private resident details in the payment note.</div>
+          <p class="small">Cash App shown: Lindsey Mathis · $GeeZoMathis</p>
+        </div>
+        <div class="cash-photo"><img loading="lazy" src="cashapp.jpg" alt="Original Cash App payment QR code displaying Lindsey Mathis and $GeeZoMathis" /></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap">Gobble Grams · The Who Crew · Spread kindness, one Gobble Gram at a time.</div></footer>
+  <script>
+    const copyButton = document.getElementById('copy-cashtag');
+    copyButton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText('$GeeZoMathis');
+        copyButton.textContent = 'Copied!';
+      } catch (e) {
+        copyButton.textContent = 'Cash App: $GeeZoMathis';
+      }
+    });
+  </script>
 </body>
 </html>
