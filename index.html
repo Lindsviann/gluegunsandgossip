@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#39231b">
-  <meta name="description" content="Choose a Gobble Gram package, card, treat, and 3D print from the Who Crew Thanksgiving fundraiser.">
+  <meta name="description" content="Send a free resident note or choose a Gobble Gram gift. Pay for gifts with cash or Cash App.">
   <title>Gobble Grams | Glue Guns &amp; Gossip</title>
-  <link rel="stylesheet" href="gobble-grams.css">
-  <script src="gobble-grams.js" defer></script>
+  <link rel="stylesheet" href="gobble-grams.css?v=2">
+  <script src="gobble-grams.js?v=2" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -15,8 +15,8 @@
       <a href="./" class="wordmark">Glue Guns &amp; Gossip</a>
       <nav class="site-nav" aria-label="Page sections">
         <a href="#packages">Packages</a>
-        <a href="#prints">3D prints</a>
-        <a href="#pay">Cash App</a>
+        <a href="#prints" id="print-nav">3D prints</a>
+        <a href="#pay">Payment</a>
       </nav>
     </div>
   </header>
@@ -26,10 +26,10 @@
         <div>
           <p class="kicker">The Who Crew Thanksgiving fundraiser</p>
           <h1 id="gobble-title">Gobble Grams!</h1>
-          <p class="hero-copy">Send a personalized Thanksgiving note to a coworker or resident. Add a treat, a 3D-printed keepsake, or the whole gift bag.</p>
+          <p class="hero-copy">Send a personalized Thanksgiving note, or add a treat, a 3D-printed keepsake, or the whole gift bag.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#packages">Build a Gobble Gram</a>
-            <a class="text-link" href="#prints">Browse 3D prints</a>
+            <a class="text-link" href="#resident-note">Free resident note</a>
           </div>
         </div>
         <figure>
@@ -44,8 +44,20 @@
 
     <form class="order-form shell" id="gobble-order" action="https://form.jotform.com/263168212099056" method="get">
       <fieldset id="packages">
-        <legend><h2>Choose your package</h2></legend>
-        <p class="intro">The photos show example combinations.</p>
+        <legend><h2>Choose your Gobble Gram</h2></legend>
+        <label class="choice resident-choice" id="resident-note">
+          <input type="radio" name="tier" value="Free resident note" required>
+          <span class="photo-card">
+            <img src="gram-card-color.webp" alt="" width="960" height="587" loading="lazy" decoding="async">
+            <span class="photo-name">
+              <strong>Free resident note</strong>
+              <small>Residents can send a thoughtful Gobble Gram note to anyone for free. Personalized note only.</small>
+            </span>
+            <span class="resident-price" aria-hidden="true">$0</span>
+          </span>
+        </label>
+        <h3 class="paid-heading">Paid packages</h3>
+        <p class="intro">Pay with cash or Cash App. Photos show example gifts.</p>
         <div class="tiers">
           <label class="choice package-choice">
             <input type="radio" name="tier" value="$1" required>
@@ -245,13 +257,17 @@
       </div>
       <p class="form-hint order-footnote">Review your choices, add your message, and submit in Jotform.</p>
     </form>
-    <noscript><p class="shell">Open the <a href="https://form.jotform.com/263168212099056">Gobble Gram order form</a> and put your choices in Additional delivery instructions.</p></noscript>
+    <noscript><p class="shell">Open the <a href="https://form.jotform.com/263168212099056">Gobble Gram order form</a> to choose the free resident note or a paid package.</p></noscript>
 
     <section class="payment" id="pay" aria-labelledby="payment-heading">
       <div class="shell">
         <div>
-          <h2 id="payment-heading">Pay with Cash App</h2>
-          <p>Use Jotform to send your order to the Who Crew. Pay the package price separately using this Cash App name or QR code.</p>
+          <h2 id="payment-heading">Pay with cash or Cash App</h2>
+          <p>For paid Gobble Grams, submit your order and choose a payment method.</p>
+          <h3>Cash</h3>
+          <p>Hand your payment to a Who Crew member and give them the sender name on your order.</p>
+          <h3>Cash App</h3>
+          <p>Send the package price using the name or QR code below.</p>
           <p class="cash-name" id="cashtag">$GeeZoMathis</p>
           <div class="cash-actions">
             <button class="btn" type="button" id="copy-cashtag">Copy $Cashtag</button>

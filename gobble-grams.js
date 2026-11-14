@@ -1,7 +1,10 @@
 const order = document.getElementById('gobble-order');
 const fields = order.elements;
+const residentNote = 'Free resident note';
 const treatSection = document.getElementById('treat-section');
 const extras = document.getElementById('extras-section');
+const printSection = document.getElementById('prints');
+const printNav = document.getElementById('print-nav');
 const treat = document.getElementById('treat-option');
 const treatNote = document.getElementById('treat-note');
 const printInputs = Array.from(fields.print);
@@ -57,14 +60,18 @@ function syncOrder(event) {
     const selectedPrint = printInputs.find(input => input.checked);
     if (selectedPrint) selectedPrint.checked = false;
   }
+  const free = tier === residentNote;
   printInputs[0].required = withPrint(tier);
-  showFieldset(treatSection, Boolean(tier));
+  showFieldset(treatSection, Boolean(tier) && !free);
+  showFieldset(printSection, !free);
+  printNav.hidden = free;
   showFieldset(extras, tier === '$5');
   updateTreatOptions(tier);
 
   actionBar.classList.toggle('is-active', Boolean(tier));
-  summary.textContent = tier ? tier + ' Gobble Gram' : 'Your Gobble Gram';
+  summary.textContent = free ? residentNote : tier ? tier + ' Gobble Gram' : 'Your Gobble Gram';
   hint.textContent = !tier ? 'Pick a package to get started.'
+    : free ? 'Personalized note · $0'
     : [
       treat.value || 'Pick a treat',
       withPrint(tier) ? fields.print.value || 'Pick one print' : '',
@@ -80,10 +87,8 @@ order.querySelector('button[type="submit"]').disabled = false;
 order.addEventListener('submit', event => {
   event.preventDefault();
   const tier = fields.tier.value;
-  const details = [
-    'Card: ' + fields.card.value,
-    'Treat: ' + treat.value,
-  ];
+  const details = ['Card: ' + fields.card.value];
+  if (tier !== residentNote) details.push('Treat: ' + treat.value);
   if (withPrint(tier)) details.push('3D print: ' + fields.print.value);
   if (tier === '$5') {
     details.push('Mini pen topper: ' + fields.pen.value);
