@@ -5,9 +5,9 @@ const treatSection = document.getElementById('treat-section');
 const extras = document.getElementById('extras-section');
 const simmerSection = document.getElementById('simmer-add-on');
 const addonNone = document.getElementById('addon-none');
-// Midnight Central Time immediately after Monday, November 30, 2026.
-const simmerOfferEnd = Date.parse('2026-12-01T06:00:00Z');
-const simmerOfferActive = () => Date.now() < simmerOfferEnd;
+// Weekly promotion is manually managed; no unconfirmed calendar cutoff.
+const simmerOfferEnabled = true;
+const simmerOfferActive = () => simmerOfferEnabled;
 const printSection = document.getElementById('prints');
 const printNav = document.getElementById('print-nav');
 const treat = document.getElementById('treat-option');
