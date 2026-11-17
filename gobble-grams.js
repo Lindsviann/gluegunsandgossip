@@ -111,7 +111,7 @@ function updateOrderLink() {
   if (withPrint(tier) && !fields.print.value) details.push('3D print: please specify your choice here.');
   const formUrl = new URL(order.action);
   if (tier) formUrl.searchParams.set('q6_radio4', tier);
-  formUrl.searchParams.set('q16_thisWeeks', selectedAddOn ? selectedAddOn + ' (+$2)' : 'No add-on');
+  formUrl.searchParams.set('thisWeeks', selectedAddOn ? selectedAddOn + ' (+$2)' : 'No add-on');
   formUrl.searchParams.set('q12_textarea10', details.join('\n'));
   formUrl.search = formUrl.search.replaceAll('+', '%20');
   document.getElementById('continue-order').href = formUrl.href;
