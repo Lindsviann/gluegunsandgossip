@@ -326,3 +326,47 @@ footer a { margin-left: 8px; text-underline-offset: 3px; }
   cursor: pointer;
 }
 .simmer-none input { width: 18px; height: 18px; accent-color: var(--selection); }
+
+/* Cheerful, mobile-friendly Thanksgiving storefront */
+:root { --accent:#b83b24; --accent-dark:#8b2819; --background:#fffbf3; --line:#e9c497; }
+.hero { background: radial-gradient(circle at 5% 15%,#ffeab0,transparent 40%),linear-gradient(120deg,#fff2da,#ffddb3); }
+.hero .shell {padding-block:38px;gap:30px;}
+.hero h1 {font-size:clamp(3rem,5.6vw,5.5rem);letter-spacing:-.045em;line-height:1.03;margin-bottom:12px;}
+.hero h1 em {color:#ad381f;font-weight:500;}
+.hero-name {font-weight:850;font-size:1.35rem;margin:0 0 10px;color:#733322;}
+.holiday-doodle {font-size:2rem;margin:0 0 14px;letter-spacing:.18em;}
+.hero figure {transform:rotate(1deg);border:3px solid #fff;box-shadow:0 10px 0 #f3c892,0 15px 30px #753d211a;}
+.hero figure img {height:auto;max-height:450px;aspect-ratio:4/3;object-fit:contain;}
+.btn-primary {box-shadow:0 4px 0 #742d1b;border-radius:100px;padding:12px 24px;}
+.giving-ribbon {background:#31533d;color:#fff7da;padding:14px 18px;text-align:center;font-weight:700;}
+.seasonal-showcase {padding-block:42px;scroll-margin-top:20px;}
+.seasonal-showcase h2 {margin:0 0 12px;}
+.seasonal-grid {display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:24px 0 14px;}
+.seasonal-card {position:relative;padding:26px;border-radius:22px;border:2px solid #eab66d;background:#fff0d4;}
+.sachet-card {background:#fbe7e5;border-color:#e6b0a7;}
+.seasonal-icon {font-size:3rem;display:block;line-height:1.2;}
+.price-tag {position:absolute;right:20px;top:20px;background:#fff;border-radius:50%;padding:14px;font-size:1.25rem;font-weight:850;transform:rotate(8deg);}
+.seasonal-card h3 {font-family:Georgia,serif;font-size:1.6rem;margin:16px 0 10px;line-height:1.15;}
+.seasonal-card p {margin:8px 0;}
+.seasonal-card .safety {font-size:.85rem;font-weight:650;margin-top:18px;}
+.seasonal-note {font-size:.9rem;color:var(--quiet);}
+.order-form {border-top:3px dashed #e2c39d;}
+.tiers .photo-card {border-width:2px;box-shadow:0 5px 0 #eedbc3;}
+.photo-card img {height:auto;}
+.option-section {padding:24px;border-radius:18px;background:#fff4e4;border:1px solid #ead1b2;}
+.option-section legend {padding:0 8px;}
+#simmer-add-on label {display:block;margin:14px 0;line-height:1.5;}
+#simmer-add-on input {accent-color:var(--accent);width:19px;height:19px;vertical-align:middle;margin-right:8px;}
+.order-actions {position:sticky;bottom:10px;z-index:5;box-shadow:0 5px 24px #3f261932;border:2px solid #b43a23;}
+@media(max-width:760px) {
+ .site-header .shell {flex-wrap:wrap;padding-block:12px;}
+ .site-nav {flex-wrap:wrap;gap:14px;}
+ .hero .shell {padding-block:24px;gap:24px;}
+ .hero figure img {max-height:330px;}
+ .hero h1 {font-size:clamp(2.8rem,10vw,4rem);}
+ .seasonal-grid {grid-template-columns:1fr;gap:14px;}
+ .seasonal-card {padding:22px;}
+ .option-section {padding:16px;}
+ .order-actions {flex-wrap:wrap;}
+ .order-actions .btn {width:100%;}
+}

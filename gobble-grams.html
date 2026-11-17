@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#39231b">
-  <meta name="description" content="Send a free resident note or choose a Gobble Gram gift. Pay for gifts with cash or Cash App.">
+  <meta name="description" content="Send a free resident note or choose a Gobble Gram gift. Payment instructions for cash, Cash App, and Apple Cash.">
   <title>Gobble Grams | Glue Guns &amp; Gossip</title>
-  <link rel="stylesheet" href="gobble-grams.css?v=4">
-  <script src="gobble-grams.js?v=4" defer></script>
+  <link rel="stylesheet" href="gobble-grams.css?v=20261117a">
+  <script src="gobble-grams.js?v=20261117a" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -15,6 +15,7 @@
       <a href="./" class="wordmark">Glue Guns &amp; Gossip</a>
       <nav class="site-nav" aria-label="Page sections">
         <a href="#packages">Packages</a>
+        <a href="#seasonal">+$2 extras</a>
         <a href="#prints" id="print-nav">3D prints</a>
         <a href="#pay">Payment</a>
       </nav>
@@ -25,10 +26,10 @@
       <div class="shell">
         <div>
           <p class="kicker">The Who Crew Thanksgiving fundraiser</p>
-          <h1 id="gobble-title">Gobble Grams!</h1>
+          <p class="holiday-doodle" aria-hidden="true">🍂 🦃 💌</p><h1 id="gobble-title">A little thanks.<br><em>A big smile.</em></h1><p class="hero-name">Send a Gobble Gram!</p>
           <p class="hero-copy">Send a personalized Thanksgiving note, or add a treat, a 3D-printed keepsake, or the whole gift bag.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#packages">Build a Gobble Gram</a>
+            <a class="btn btn-primary" href="https://form.jotform.com/263168212099056">Order a Gobble Gram →</a><a class="text-link" href="#packages">Browse gifts</a>
             <a class="text-link" href="#resident-note">Free resident note</a>
           </div>
         </div>
@@ -41,7 +42,17 @@
         </figure>
       </div>
     </section>
-
+    <div class="giving-ribbon">💛 Little gifts. Thoughtful notes. Holiday joy for TSR residents &amp; staff.</div>
+    <section id="seasonal" class="seasonal-showcase shell">
+      <p class="kicker">A little something cozy</p><h2>Make their gift smell amazing.</h2>
+      <p>Two different treats for the senses. Add either one to any paid Gobble Gram for <strong>just $2 more</strong>.</p>
+      <div class="seasonal-grid">
+        <article class="seasonal-card sachet-card"><span class="seasonal-icon" aria-hidden="true">🍎</span><span class="price-tag">+$2</span><h3>Apple Cinnamon Sachet</h3><p>Pre-scented potpourri for a car, bathroom, or closet. A cozy little pick-me-up, ready to enjoy.</p><p class="safety">Passive fragrance only. Do not heat, simmer, or consume.</p></article>
+        <article class="seasonal-card pot-card"><span class="seasonal-icon" aria-hidden="true">🍊</span><span class="price-tag">+$2</span><h3>Simmer Pot Kit</h3><p>Unscented dried fruit and spices to simmer in water on the stove for a warm, welcoming aroma.</p><p class="safety">Never leave a simmer pot unattended. Not for eating.</p></article>
+      </div>
+      <p class="seasonal-note">November 16–30, 2026 · While supplies last · Choose one add-on with a paid package.</p>
+      <a class="btn btn-primary" href="https://form.jotform.com/263168212099056">Choose a package + cozy add-on →</a>
+    </section>
     <form class="order-form shell" id="gobble-order" action="https://form.jotform.com/263168212099056" method="get">
       <fieldset id="packages">
         <legend><h2>Choose your Gobble Gram</h2></legend>
@@ -57,7 +68,7 @@
           </span>
         </label>
         <h3 class="paid-heading">Paid packages</h3>
-        <p class="intro">Pay with cash or Cash App. Photos show example gifts.</p>
+        <p class="intro">Payment instructions for cash, Cash App, or Apple Cash are below. Photos show example gifts.</p>
         <div class="tiers">
           <label class="choice package-choice">
             <input type="radio" name="tier" value="$1" required>
@@ -90,29 +101,17 @@
         </div>
       </fieldset>
 
-      <fieldset class="option-section simmer-section" id="simmer-add-on" hidden disabled>
-        <legend><h2>This week's special: choose a $2 add-on</h2></legend>
-        <p class="intro">Choose any paid Gobble Gram package and add <strong>one</strong> seasonal gift for just $2. <strong>November 16–22 only, while supplies last.</strong></p>
-        <label class="simmer-choice" for="addon-simmer">
-          <input type="radio" name="addon" id="addon-simmer" value="Simmer Pot Kit">
-          <span class="simmer-icon" aria-hidden="true">♨</span>
-          <span><strong>Simmer Pot Kit · +$2</strong><small>Unscented dried fruit and spices to simmer gently in water on the stove. Never leave unattended.</small></span>
-        </label>
-        <label class="simmer-choice" for="addon-sachet" style="margin-top:10px">
-          <input type="radio" name="addon" id="addon-sachet" value="Apple Cinnamon Sachet">
-          <span class="simmer-icon" aria-hidden="true">♡</span>
-          <span><strong>Apple Cinnamon Sachet · +$2</strong><small>Pre-scented fragrance sachet for a car, bathroom, or closet. Do not heat, simmer, or eat.</small></span>
-        </label>
-        <label class="simmer-none" for="addon-none">
-          <input type="radio" name="addon" id="addon-none" value="None" checked>
-          No add-on
-        </label>
-        <p class="form-hint">Gift bag styles may vary. Scented sachets and stovetop simmer pot kits are separate products.</p>
+      <fieldset class="option-section" id="simmer-add-on" hidden disabled>
+        <legend><h2>Choose your $2 seasonal add-on</h2></legend>
+        <p class="intro">November 16–30, 2026 only, while supplies last. Add one to any paid Gobble Gram package.</p>
+        <label><input type="radio" name="addon" id="addon-none" value="None" checked> No add-on</label>
+        <label><input type="radio" name="addon" value="Simmer Pot Kit"> +$2 Simmer Pot Kit — unscented dried fruit and spices for simmering in water on the stove</label>
+        <label><input type="radio" name="addon" value="Apple Cinnamon Sachet"> +$2 Apple Cinnamon Sachet — pre-scented potpourri for car, bathroom, or closet</label>
+        <p class="form-hint">The sachet is for passive fragrance only. Do not heat, simmer, or consume it. Never leave a simmer pot unattended.</p>
       </fieldset>
-
       <fieldset class="option-section" id="message-card">
         <legend><h2>Choose your message card</h2></legend>
-        <p class="intro">You’ll write your own message on the order form.</p>
+        <p class="intro">Browsing choices here is optional. Your selections carry to the order form, where you can finish your message and recipient details.</p>
         <div class="message-grid">
           <label class="choice message-choice">
             <input type="radio" name="card" value="Full-color turkey" checked>
@@ -193,10 +192,10 @@
             </span>
           </label>
           <label class="choice ">
-            <input type="radio" name="print" value="Smiley Fidget (White and orange)" >
+            <input type="radio" name="print" value="Smiley Clicker (White and orange)" >
             <span class="photo-card">
               <img src="gram-smiley-fidget.webp" alt="" width="720" height="576" loading="lazy" decoding="async">
-              <span class="photo-name"><strong>Smiley Fidget</strong><small>White and orange</small></span>
+              <span class="photo-name"><strong>Smiley Clicker</strong><small>White and orange</small></span>
             </span>
           </label>
           <label class="choice ">
@@ -273,34 +272,41 @@
 
       <div class="order-actions" id="order-actions">
         <p role="status" aria-atomic="true"><strong id="order-summary">Your Gobble Gram</strong>
-          <small id="order-hint">Pick a package to get started.</small></p>
-        <button class="btn btn-primary" type="submit" disabled>Continue to order</button>
+          <small id="order-hint">Browse here or go straight to the order form.</small></p>
+        <a class="btn btn-primary" id="continue-order" href="https://form.jotform.com/263168212099056">Continue to order →</a>
       </div>
-      <p class="form-hint order-footnote">When Jotform opens, confirm the same seasonal add-on (or choose “No add-on”) before submitting. The total above already includes any $2 add-on—do not pay twice.</p>
+      <p class="form-hint order-footnote">The next page is the order form. Review your choices, add your message and recipient, then submit. No payment is collected by this button.</p>
     </form>
     <noscript><p class="shell">Open the <a href="https://form.jotform.com/263168212099056">Gobble Gram order form</a> to choose the free resident note or a paid package.</p></noscript>
 
     <section class="payment" id="pay" aria-labelledby="payment-heading">
       <div class="shell">
         <div>
-          <h2 id="payment-heading">Pay with cash or Cash App</h2>
+          <h2 id="payment-heading">Payment options</h2>
           <p>For paid Gobble Grams, submit your order and choose a payment method.</p>
           <h3>Cash</h3>
           <p>Hand your payment to a Who Crew member and give them the sender name on your order.</p>
           <h3>Cash App</h3>
-          <p>Send the package price plus any selected $2 seasonal add-on using the name or QR code below. Your total is shown before you continue to the order form.</p>
+          <p>Send the package price using the name or QR code below.</p>
           <p class="cash-name" id="cashtag">$GeeZoMathis</p>
           <div class="cash-actions">
             <button class="btn" type="button" id="copy-cashtag">Copy $Cashtag</button>
             <a href="https://cash.app/" target="_blank" rel="noopener noreferrer">Open Cash App</a>
           </div>
           <p class="pay-note">Keep resident names and details out of your Cash App note.</p>
+          <h3>Venmo</h3>
+          <p>Venmo: <strong>@Lindsey-Mathis-1</strong> (Lindsey Mathis). Please include your first and last name and “Gobble Gram order” in your payment note; do not include resident information.</p>
+          <p><a href="https://venmo.com/u/Lindsey-Mathis-1" target="_blank" rel="noopener noreferrer">Open Lindsey’s Venmo profile</a></p>
+          <p><img src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&amp;data=https%3A%2F%2Fvenmo.com%2Fu%2FLindsey-Mathis-1" width="240" height="240" alt="QR code linking to Lindsey Mathis’s Venmo profile, @Lindsey-Mathis-1" loading="lazy"></p>
+          <h3>Apple Cash by text</h3>
+          <p>To ask about paying by Apple Cash, text Lindsey at <a href="sms:+18168686363">816-868-6363</a>. Include your first and last name and say that you submitted a Gobble Gram order. Lindsey can coordinate payment by text message.</p>
+          <p class="pay-note">Please do not include resident names or private delivery details in payment messages. Apple Cash is designed for personal payments; for sales, cash or Cash App business payment options may be more appropriate.</p>
         </div>
         <img class="cash-qr" src="cashapp.jpg" alt="Cash App QR code for Lindsey Mathis, $GeeZoMathis"
           width="1178" height="1555" loading="lazy" decoding="async">
       </div>
     </section>
   </main>
-  <footer><div class="shell">Gobble Grams · The Who Crew <a href="gobblegram.jpg" target="_blank" rel="noopener">Original flyer</a></div></footer>
+  <footer><div class="shell">Gobble Grams · The Who Crew <a href="gobblegram.jpg" target="_blank" rel="noopener">Original flyer</a><a href="elf-mischief.html#preorder">Elf kit preorders</a></div></footer>
 </body>
 </html>

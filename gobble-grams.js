@@ -80,7 +80,7 @@ function syncOrder(event) {
   actionBar.classList.toggle('is-active', Boolean(tier));
   const total = tier && !free ? Number(tier.slice(1)) + (selectedAddOn ? 2 : 0) : 0;
   summary.textContent = free ? residentNote : tier ? '$' + total + ' total · ' + tier + ' Gobble Gram' : 'Your Gobble Gram';
-  hint.textContent = !tier ? 'Pick a package to get started.'
+  hint.textContent = !tier ? 'Browse here or go straight to the order form.'
     : free ? 'Personalized note · $0'
     : [
       treat.value || 'Pick a treat',
@@ -88,34 +88,35 @@ function syncOrder(event) {
       tier === '$5' && fields.pen.value !== 'Surprise me' ? fields.pen.value + ' topper' : '',
       selectedAddOn ? '+ $2 ' + selectedAddOn : '',
     ].filter(Boolean).join(' · ');
+  updateOrderLink();
 }
 
 order.addEventListener('change', syncOrder);
 window.addEventListener('pageshow', syncOrder);
 syncOrder();
-order.querySelector('button[type="submit"]').disabled = false;
 
-order.addEventListener('submit', event => {
-  event.preventDefault();
+function updateOrderLink() {
   const tier = fields.tier.value;
   const details = ['Card: ' + fields.card.value];
-  if (tier !== residentNote) details.push('Treat: ' + treat.value);
-  if (withPrint(tier)) details.push('3D print: ' + fields.print.value);
+  if (tier && tier !== residentNote && treat.value) details.push('Treat: ' + treat.value);
+  if (withPrint(tier) && fields.print.value) details.push('3D print: ' + fields.print.value);
   if (tier === '$5') {
     details.push('Mini pen topper: ' + fields.pen.value);
     details.push('Drink preference: ' + (fields.drink.value.trim() || 'Any available'));
   }
-  const selectedAddOn = tier !== residentNote && simmerOfferActive() && fields.addon.value !== 'None' ? fields.addon.value : '';
+  const selectedAddOn = tier && tier !== residentNote && simmerOfferActive() && fields.addon.value !== 'None' ? fields.addon.value : '';
   if (selectedAddOn) details.push('Seasonal add-on: ' + selectedAddOn + ' (+$2; while supplies last)');
-  details.push('Total due: ' + (tier === residentNote ? '$0' : '$' + (Number(tier.slice(1)) + (selectedAddOn ? 2 : 0))));
-
+  if (tier) details.push('Total due: ' + (tier === residentNote ? '$0' : '$' + (Number(tier.slice(1)) + (selectedAddOn ? 2 : 0))));
+  if (tier && tier !== residentNote && !treat.value) details.push('Treat: please specify your choice here.');
+  if (withPrint(tier) && !fields.print.value) details.push('3D print: please specify your choice here.');
   const formUrl = new URL(order.action);
-  formUrl.searchParams.set('q6_radio4', tier);
+  if (tier) formUrl.searchParams.set('q6_radio4', tier);
+  formUrl.searchParams.set('q16_thisWeeks', selectedAddOn ? selectedAddOn + ' (+$2)' : 'No add-on');
   formUrl.searchParams.set('q12_textarea10', details.join('\n'));
-  // Jotform's long text prefill expects percent-encoded spaces.
   formUrl.search = formUrl.search.replaceAll('+', '%20');
-  window.location.assign(formUrl.href);
-});
+  document.getElementById('continue-order').href = formUrl.href;
+}
+order.addEventListener('input', syncOrder);
 
 const copyButton = document.getElementById('copy-cashtag');
 copyButton.addEventListener('click', async () => {
