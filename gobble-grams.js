@@ -93,6 +93,9 @@ function syncOrder(event) {
   showFieldset(printSection, !free);
   printNav.hidden = free;
   showFieldset(extras, tier === '$5');
+  const otherDrink = tier === '$5' && fields.drink.value === 'Other — write in request';
+  document.getElementById('other-drink-wrap').hidden = !otherDrink;
+  fields.otherDrink.disabled = !otherDrink;
   updateTreatOptions(tier);
 
   actionBar.classList.toggle('is-active', Boolean(tier));
@@ -123,6 +126,7 @@ function updateOrderLink() {
   if (tier === '$5') {
     details.push('Mini pen topper: ' + fields.pen.value);
     details.push('Drink preference: ' + (fields.drink.value.trim() || 'Any available'));
+    if (fields.drink.value === 'Other — write in request') details.push('Requested drink (subject to availability): ' + (fields.otherDrink.value.trim() || 'Please specify'));
   }
   const selectedAddOn = tier && tier !== residentNote && simmerOfferActive() && fields.addon.value !== 'None' ? fields.addon.value : '';
   if (selectedAddOn) details.push('Seasonal add-on: ' + selectedAddOn + ' (+$2; while supplies last)');
@@ -133,6 +137,7 @@ function updateOrderLink() {
   if (tier) formUrl.searchParams.set('q6_radio4', tier);
   if (tier !== residentNote && fields.payment.value) formUrl.searchParams.set('paymentMethod', fields.payment.value);
   if (tier === '$5' && fields.drink.value) formUrl.searchParams.set('drinkChoice', fields.drink.value);
+  if (tier === '$5' && fields.drink.value === 'Other — write in request') formUrl.searchParams.set('requestedDrink', fields.otherDrink.value.trim());
   formUrl.searchParams.set('thisWeeks', selectedAddOn ? selectedAddOn + ' (+$2)' : 'No add-on');
   formUrl.searchParams.set('q12_textarea10', details.join('\n'));
   formUrl.search = formUrl.search.replaceAll('+', '%20');
