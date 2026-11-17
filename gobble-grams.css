@@ -370,3 +370,19 @@ footer a { margin-left: 8px; text-underline-offset: 3px; }
  .order-actions {flex-wrap:wrap;}
  .order-actions .btn {width:100%;}
 }
+
+/* Clearer gift-shop package presentation */
+.package-choice .photo-card {border:2px solid #dfb889; background:#fffaf0; box-shadow:0 7px 22px #61300b14; overflow:hidden;}
+.package-choice:nth-child(2) .photo-card {border-color:#d49947;}
+.package-choice:nth-child(3) .photo-card {border-color:#b8673d;}
+.package-choice:nth-child(4) .photo-card {border-color:#708257;}
+.package-choice .photo-name {padding:1.1rem; background:linear-gradient(135deg,#fff9e7,#f9dfb6);}
+.package-choice .photo-name strong {color:#8f3c20;font-size:1.17rem;line-height:1.2;}
+.package-choice .photo-name small {line-height:1.55;color:#4d3324;}
+.package-choice .photo-card::before {content:'A little gift, a lot of heart';display:block;padding:.48rem .8rem;background:#a13e26;color:#fff8dc;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.045em;}
+.package-choice:nth-child(2) .photo-card::before{content:'Sweeten someone’s day';background:#aa6a20;}
+.package-choice:nth-child(3) .photo-card::before{content:'A treat + something to keep';background:#7b5937;}
+.package-choice:nth-child(4) .photo-card::before{content:'The whole bundle of joy';background:#506442;}
+.seasonal-photo {display:block;width:100%;height:280px;object-fit:cover;border-radius:15px;margin-bottom:1rem;}
+.seasonal-card .photo-caption{font-size:.75rem;color:#6a5547;}
+.drink-choice select{width:100%;padding:14px;border:1px solid #8e765c;border-radius:10px;background:white;font:inherit;}

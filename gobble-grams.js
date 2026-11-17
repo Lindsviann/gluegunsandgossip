@@ -49,9 +49,10 @@ function updateTreatOptions(tier) {
   treat.replaceChildren(new Option('Choose a treat', ''), ...options.map(value => new Option(value)));
   treat.value = options.includes(previous) ? previous : '';
   treat.dataset.tier = tier;
+  document.getElementById('treat-label').textContent = (tier === '$1' || tier === '$3') ? 'Choose your small candy' : 'Choose your candy bar or snack';
   treatNote.textContent = tier === '$2'
     ? 'The package photo shows a full-size Hershey’s bar.'
-    : 'Mini chocolates and sucker flavors are assorted.';
+    : tier === '$5' ? 'Choose a small candy, full-size candy bar, or Rice Krispies Treat.' : 'This tier includes a mini chocolate or sucker. Choose $2 or $5 for a full-size candy bar or Rice Krispies Treat.';
 }
 
 function syncOrder(event) {
@@ -111,6 +112,7 @@ function updateOrderLink() {
   if (withPrint(tier) && !fields.print.value) details.push('3D print: please specify your choice here.');
   const formUrl = new URL(order.action);
   if (tier) formUrl.searchParams.set('q6_radio4', tier);
+  if (tier === '$5' && fields.drink.value) formUrl.searchParams.set('drinkChoice', fields.drink.value);
   formUrl.searchParams.set('thisWeeks', selectedAddOn ? selectedAddOn + ' (+$2)' : 'No add-on');
   formUrl.searchParams.set('q12_textarea10', details.join('\n'));
   formUrl.search = formUrl.search.replaceAll('+', '%20');
@@ -128,3 +130,4 @@ copyButton.addEventListener('click', async () => {
     copyButton.textContent = cashtag;
   }
 });
+
