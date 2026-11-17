@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#39231b">
-  <meta name="description" content="Send a free resident note or choose a Gobble Gram gift. Payment instructions for cash, Cash App, and Apple Cash.">
+  <meta name="description" content="Send a free resident note or choose a Gobble Gram gift. Payment instructions for cash, Cash App, Venmo, and Apple Cash.">
   <title>Gobble Grams | Glue Guns &amp; Gossip</title>
-  <link rel="stylesheet" href="gobble-grams.css?v=20261117d">
-  <script src="gobble-grams.js?v=20261117d" defer></script>
+  <link rel="stylesheet" href="gobble-grams.css?v=20261117e">
+  <script src="gobble-grams.js?v=20261117e" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -42,7 +42,7 @@
         </figure>
       </div>
     </section>
-    <div class="giving-ribbon">💛 Little gifts. Thoughtful notes. Holiday joy for TSR residents &amp; staff.</div>
+    <div class="how-it-works shell"><span><b>1</b> Pick a little gift</span><span><b>2</b> Write something kind</span><span><b>3</b> Make someone smile</span></div><div class="giving-ribbon">💛 Little gifts. Thoughtful notes. Holiday joy for TSR residents &amp; staff.</div>
     <section id="seasonal" class="seasonal-showcase shell">
       <p class="kicker">A little something cozy</p><h2>Make their gift smell amazing.</h2>
       <p>Two different treats for the senses. Add either one to any paid Gobble Gram for <strong>just $2 more</strong>.</p>
@@ -74,7 +74,7 @@
             <input type="radio" name="tier" value="$1" required>
             <span class="photo-card">
               <img src="gram-package-1-festive.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
-              <span class="photo-name"><strong>$1 · The sweet note</strong><small>Personalized card, plus mini chocolate or a sucker.</small></span>
+              <span class="photo-name"><strong>$1 · The sweet note</strong><small>Personalized card, plus one mini chocolate or one sucker.</small></span>
             </span>
           </label>
           <label class="choice package-choice">
@@ -88,7 +88,7 @@
             <input type="radio" name="tier" value="$3" required>
             <span class="photo-card">
               <img src="gram-package-3.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
-              <span class="photo-name"><strong>$3 · The little keepsake</strong><small>Personalized card, mini chocolate or a sucker, and one 3D print.</small></span>
+              <span class="photo-name"><strong>$3 · The little keepsake</strong><small>Personalized card, one mini chocolate or one sucker, and one 3D print.</small></span>
             </span>
           </label>
           <label class="choice package-choice">
@@ -139,9 +139,9 @@
 
       <fieldset class="option-section" id="prints" aria-describedby="print-instructions print-personalization">
         <legend><h2>Pick your 3D print</h2></legend>
-        <p class="intro" id="print-instructions">One print comes with $3 and $5 Gobble Grams. Tap a photo to start with $3.</p>
+        <p class="intro" id="print-instructions">One print comes with $3 and $5 Gobble Grams. Tap a photo to start with $3. Choose one item, not every item pictured.</p>
         <p class="intro" id="print-personalization"><strong>Make someone feel extra special this Thanksgiving.</strong> Want to personalize your 3D print? Tell us what you have in mind in the “Additional delivery instructions” field on the order form. We’ll let you know what we can do.</p>
-        <div class="photo-grid">
+        <p class="photo-disclosure">Fresh photo previews styled from our actual items. Background decorations are not included. Sign photos may show both sides of the same sign; colors and availability vary.</p><div class="photo-grid">
           <label class="choice ">
             <input type="radio" name="print" value="Flat Flexi Turkey (Orange)" >
             <span class="photo-card">
@@ -166,49 +166,49 @@
           <label class="choice ">
             <input type="radio" name="print" value="Mini Clog Keychain (White)" >
             <span class="photo-card">
-              <img src="gram-mini-clog-white.webp" alt="" width="720" height="576" loading="lazy" decoding="async">
+              <span class="product-window"><img class="panel-image panels-2 panel-0" src="keychains-festive.webp" alt="" loading="lazy" decoding="async"></span>
               <span class="photo-name"><strong>Mini Clog Keychain</strong><small>White</small></span>
             </span>
           </label>
           <label class="choice ">
             <input type="radio" name="print" value="Octagon Fidget Keychain (Burgundy)" >
             <span class="photo-card">
-              <img src="gram-octagon-red.webp" alt="" width="720" height="576" loading="lazy" decoding="async">
+              <span class="product-window"><img class="panel-image panels-3 panel-1" src="prints-festive.webp" alt="" loading="lazy" decoding="async"></span>
               <span class="photo-name"><strong>Octagon Fidget Keychain</strong><small>Burgundy</small></span>
             </span>
           </label>
           <label class="choice ">
             <input type="radio" name="print" value="Octagon Fidget Keychain (Orange)" >
             <span class="photo-card">
-              <img src="gram-octagon-orange.webp" alt="" width="720" height="576" loading="lazy" decoding="async">
+              <span class="product-window"><img class="panel-image panels-2 panel-1" src="keychains-festive.webp" alt="" loading="lazy" decoding="async"></span>
               <span class="photo-name"><strong>Octagon Fidget Keychain</strong><small>Orange</small></span>
             </span>
           </label>
           <label class="choice ">
             <input type="radio" name="print" value="Flexi Elf Keychain (Red and white)" >
             <span class="photo-card">
-              <img src="gram-flexi-elf.webp" alt="" width="720" height="576" loading="lazy" decoding="async">
+              <span class="product-window"><img class="panel-image panels-3 panel-2" src="prints-festive.webp" alt="" loading="lazy" decoding="async"></span>
               <span class="photo-name"><strong>Flexi Elf Keychain</strong><small>Red and white</small></span>
             </span>
           </label>
           <label class="choice ">
             <input type="radio" name="print" value="Smiley Clicker (White and orange)" >
             <span class="photo-card">
-              <img src="gram-smiley-fidget.webp" alt="" width="720" height="576" loading="lazy" decoding="async">
+              <img class="product-full" src="clicker-festive.webp" alt="" width="720" height="576" loading="lazy" decoding="async">
               <span class="photo-name"><strong>Smiley Clicker</strong><small>White and orange</small></span>
             </span>
           </label>
           <label class="choice ">
             <input type="radio" name="print" value="Folding Cube Fidget (Multicolor)" >
             <span class="photo-card">
-              <img src="gram-folding-cube-fidget.webp" alt="" width="720" height="576" loading="lazy" decoding="async">
+              <span class="product-window"><img class="panel-image panels-3 panel-0" src="prints-festive.webp" alt="" loading="lazy" decoding="async"></span>
               <span class="photo-name"><strong>Folding Cube Fidget</strong><small>Multicolor</small></span>
             </span>
           </label>
           <label class="choice ">
             <input type="radio" name="print" value="You Brighten This Room (Brown sign)" >
             <span class="photo-card">
-              <img src="gram-sign-brighten.webp" alt="" width="720" height="576" loading="lazy" decoding="async">
+              <img class="product-full" src="brighten-festive.webp" alt="" width="720" height="576" loading="lazy" decoding="async">
               <span class="photo-name"><strong>You Brighten This Room</strong><small>Brown sign · reverse reads “When You Leave”</small></span>
             </span>
           </label>
@@ -222,11 +222,11 @@
           <label class="choice ">
             <input type="radio" name="print" value="Your Opinion Matters (Green sign)" >
             <span class="photo-card">
-              <img src="gram-sign-opinion.webp" alt="" width="720" height="576" loading="lazy" decoding="async">
+              <img class="product-full" src="opinion-festive.webp" alt="" width="720" height="576" loading="lazy" decoding="async">
               <span class="photo-name"><strong>Your Opinion Matters</strong><small>Green sign · reverse reads “To Someone Probably”</small></span>
             </span>
           </label>
-        </div>
+<label class="choice"><input type="radio" name="print" value="Hang In There (Olive sign)"><span class="photo-card"><span class="product-window" style="aspect-ratio:2/3"><img class="panel-image panels-3 panel-0" src="more-signs-festive.webp" alt="" loading="lazy" decoding="async"></span><span class="photo-name"><strong>Hang In There</strong><small>Reverse reads “It Gets Worse” · one sign</small></span></span></label><label class="choice"><input type="radio" name="print" value="Have a Great Day (Red and white sign)"><span class="photo-card"><span class="product-window" style="aspect-ratio:2/3"><img class="panel-image panels-3 panel-2" src="more-signs-festive.webp" alt="" loading="lazy" decoding="async"></span><span class="photo-name"><strong>Have a Great Day</strong><small>Red and white · one sign</small></span></span></label>        </div>
       </fieldset>
 
       <fieldset class="option-section" id="extras-section" hidden disabled>
