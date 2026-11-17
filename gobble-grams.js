@@ -107,27 +107,7 @@ order.addEventListener('submit', event => {
   }
   const selectedAddOn = tier !== residentNote && simmerOfferActive() && fields.addon.value !== 'None' ? fields.addon.value : '';
   if (selectedAddOn) details.push('Seasonal add-on: ' + selectedAddOn + ' (+$2; while supplies last)');
-  details.push('Total due: ' + (tier === residentNote ? '$0' : '
-
-  const formUrl = new URL(order.action);
-  formUrl.searchParams.set('q6_radio4', tier);
-  formUrl.searchParams.set('q12_textarea10', details.join('\n'));
-  // Jotform's long text prefill expects percent-encoded spaces.
-  formUrl.search = formUrl.search.replaceAll('+', '%20');
-  window.location.assign(formUrl.href);
-});
-
-const copyButton = document.getElementById('copy-cashtag');
-copyButton.addEventListener('click', async () => {
-  const cashtag = document.getElementById('cashtag').textContent.trim();
-  try {
-    await navigator.clipboard.writeText(cashtag);
-    copyButton.textContent = 'Copied';
-  } catch {
-    copyButton.textContent = cashtag;
-  }
-});
- + (Number(tier.slice(1)) + (selectedAddOn ? 2 : 0))));
+  details.push('Total due: ' + (tier === residentNote ? '$0' : '$' + (Number(tier.slice(1)) + (selectedAddOn ? 2 : 0))));
 
   const formUrl = new URL(order.action);
   formUrl.searchParams.set('q6_radio4', tier);
