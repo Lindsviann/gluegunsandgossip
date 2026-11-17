@@ -273,3 +273,45 @@ footer a { margin-left: 8px; text-underline-offset: 3px; }
   .resident-choice .photo-name small { font-size: .82rem; }
   .resident-price { font-size: 1rem; }
 }
+
+/* Limited-time simmer pot add-on */
+.simmer-section { scroll-margin-top: 20px; }
+.simmer-choice {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 780px;
+  padding: 16px 18px;
+  border: 2px solid #b44a2c;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fff8eb, #ffe9d2);
+  cursor: pointer;
+}
+.simmer-choice:has(input:checked) {
+  border-color: var(--selection);
+  box-shadow: 0 0 0 2px #36574124;
+}
+.simmer-choice input {
+  width: 23px;
+  height: 23px;
+  flex-shrink: 0;
+  accent-color: var(--selection);
+}
+.simmer-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #b3482d;
+  color: #fff7ec;
+  font-size: 2.25rem;
+  line-height: 1;
+}
+.simmer-choice strong { display: block; font-size: 1.1rem; }
+.simmer-choice small { display: block; margin-top: 3px; color: var(--quiet); font-size: .9rem; }
+@media (max-width: 420px) {
+  .simmer-choice { gap: 10px; padding: 12px; }
+  .simmer-icon { width: 42px; height: 42px; font-size: 1.8rem; }
+}
