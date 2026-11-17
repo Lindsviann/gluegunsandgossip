@@ -4,7 +4,7 @@ const residentNote = 'Free resident note';
 const treatSection = document.getElementById('treat-section');
 const extras = document.getElementById('extras-section');
 const simmerSection = document.getElementById('simmer-add-on');
-const simmerInput = document.getElementById('simmer-option');
+const addonNone = document.getElementById('addon-none');
 // Midnight Central Time immediately after Sunday, November 22, 2026.
 const simmerOfferEnd = Date.parse('2026-11-23T06:00:00Z');
 const simmerOfferActive = () => Date.now() < simmerOfferEnd;
@@ -66,10 +66,10 @@ function syncOrder(event) {
     if (selectedPrint) selectedPrint.checked = false;
   }
   const free = tier === residentNote;
-  const showSimmer = Boolean(tier) && !free && simmerOfferActive();
-  showFieldset(simmerSection, showSimmer);
-  if (!showSimmer) simmerInput.checked = false;
-  const hasSimmer = showSimmer && simmerInput.checked;
+  const showAddOn = Boolean(tier) && !free && simmerOfferActive();
+  showFieldset(simmerSection, showAddOn);
+  if (!showAddOn) addonNone.checked = true;
+  const selectedAddOn = showAddOn && fields.addon.value !== 'None' ? fields.addon.value : '';
   printInputs[0].required = withPrint(tier);
   showFieldset(treatSection, Boolean(tier) && !free);
   showFieldset(printSection, !free);
@@ -78,7 +78,7 @@ function syncOrder(event) {
   updateTreatOptions(tier);
 
   actionBar.classList.toggle('is-active', Boolean(tier));
-  const total = tier && !free ? Number(tier.slice(1)) + (hasSimmer ? 2 : 0) : 0;
+  const total = tier && !free ? Number(tier.slice(1)) + (selectedAddOn ? 2 : 0) : 0;
   summary.textContent = free ? residentNote : tier ? '$' + total + ' total · ' + tier + ' Gobble Gram' : 'Your Gobble Gram';
   hint.textContent = !tier ? 'Pick a package to get started.'
     : free ? 'Personalized note · $0'
@@ -86,7 +86,7 @@ function syncOrder(event) {
       treat.value || 'Pick a treat',
       withPrint(tier) ? fields.print.value || 'Pick one print' : '',
       tier === '$5' && fields.pen.value !== 'Surprise me' ? fields.pen.value + ' topper' : '',
-      hasSimmer ? '+ $2 simmer pot kit' : '',
+      selectedAddOn ? '+ $2 ' + selectedAddOn : '',
     ].filter(Boolean).join(' · ');
 }
 
@@ -105,9 +105,29 @@ order.addEventListener('submit', event => {
     details.push('Mini pen topper: ' + fields.pen.value);
     details.push('Drink preference: ' + (fields.drink.value.trim() || 'Any available'));
   }
-  const addSimmer = tier !== residentNote && simmerOfferActive() && simmerInput.checked;
-  if (addSimmer) details.push('Simmer pot kit add-on: Yes (+$2; while supplies last)');
-  details.push('Total due: ' + (tier === residentNote ? '$0' : '$' + (Number(tier.slice(1)) + (addSimmer ? 2 : 0))));
+  const selectedAddOn = tier !== residentNote && simmerOfferActive() && fields.addon.value !== 'None' ? fields.addon.value : '';
+  if (selectedAddOn) details.push('Seasonal add-on: ' + selectedAddOn + ' (+$2; while supplies last)');
+  details.push('Total due: ' + (tier === residentNote ? '$0' : '
+
+  const formUrl = new URL(order.action);
+  formUrl.searchParams.set('q6_radio4', tier);
+  formUrl.searchParams.set('q12_textarea10', details.join('\n'));
+  // Jotform's long text prefill expects percent-encoded spaces.
+  formUrl.search = formUrl.search.replaceAll('+', '%20');
+  window.location.assign(formUrl.href);
+});
+
+const copyButton = document.getElementById('copy-cashtag');
+copyButton.addEventListener('click', async () => {
+  const cashtag = document.getElementById('cashtag').textContent.trim();
+  try {
+    await navigator.clipboard.writeText(cashtag);
+    copyButton.textContent = 'Copied';
+  } catch {
+    copyButton.textContent = cashtag;
+  }
+});
+ + (Number(tier.slice(1)) + (selectedAddOn ? 2 : 0))));
 
   const formUrl = new URL(order.action);
   formUrl.searchParams.set('q6_radio4', tier);
