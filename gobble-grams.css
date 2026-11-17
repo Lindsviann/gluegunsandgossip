@@ -451,3 +451,12 @@ footer a { margin-left: 8px; text-underline-offset: 3px; }
 .seasonal-showcase{background:#fff3d9;border:2px dashed #d58b35;border-radius:22px;padding:25px;margin-bottom:32px}
 .photo-grid .photo-card{border:2px solid #e5bb7e}.option-section{border:2px solid #e6bd81;background:#fff8e8}
 @media(max-width:760px){.thanksgiving-banner{min-height:140px;padding:30px 19%;background-size:auto 140px}.thanksgiving-banner span{font-size:.68rem}.thanksgiving-banner strong{font-size:1.4rem}.hero .shell{padding-block:20px}.special-teaser strong{font-size:1rem}.special-badge{gap:7px;font-size:.83rem}.seasonal-showcase{padding:18px}}
+
+.payment-start{background:#fff4d9;border:2px solid #c75b28!important;border-radius:22px;padding:22px!important;margin-bottom:28px!important}
+.payment-start h2{font-size:clamp(1.3rem,3vw,1.9rem)}
+.payment-choices{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.payment-choices label{background:white;border:2px solid #e6bc78;border-radius:12px;padding:12px 18px;font-weight:750;cursor:pointer}
+.payment-choices label:has(input:checked){background:#ffe2a7;border-color:#8b3e20}
+.payment-choices input{accent-color:#a34426;margin-right:8px}
+#payment-next-step{font-weight:650;line-height:1.6}
+#free-payment-note{background:#fff4d9;padding:18px;border-radius:15px;font-weight:bold}

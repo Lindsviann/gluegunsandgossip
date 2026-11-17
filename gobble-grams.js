@@ -1,5 +1,13 @@
 const order = document.getElementById('gobble-order');
 const fields = order.elements;
+const paymentStart = document.getElementById('payment-start');
+const paymentNext = document.getElementById('payment-next-step');
+const paymentSteps = {
+  'Cash': 'After submitting, give cash to a Who Crew member and tell them the sender name on your order.',
+  'Cash App': 'After submitting, send your total to $GeeZoMathis on Cash App. Include your first and last name and “Gobble Gram order”; no resident details.',
+  'Venmo': 'After submitting, send your total to @Lindsey-Mathis-1 on Venmo. Include your first and last name and “Gobble Gram order”; no resident details.',
+  'Apple Cash by text': 'After submitting, text 816-868-6363 to coordinate Apple Cash. Include your sender name and “Gobble Gram order”; no resident details.'
+};
 const residentNote = 'Free resident note';
 const treatSection = document.getElementById('treat-section');
 const extras = document.getElementById('extras-section');
@@ -73,6 +81,9 @@ function syncOrder(event) {
     if (selectedPrint) selectedPrint.checked = false;
   }
   const free = tier === residentNote;
+  showFieldset(paymentStart, !free);
+  document.getElementById('free-payment-note').hidden = !free;
+  paymentNext.textContent = paymentSteps[fields.payment.value] || 'Your payment choice will carry to the order form. Free resident notes need no payment.';
   const showAddOn = Boolean(tier) && !free && simmerOfferActive();
   showFieldset(simmerSection, showAddOn);
   if (!showAddOn) addonNone.checked = true;
@@ -105,6 +116,7 @@ syncOrder();
 function updateOrderLink() {
   const tier = fields.tier.value;
   const details = ['Card: ' + fields.card.value];
+  if (tier !== residentNote && fields.payment.value) details.push('Planned payment: ' + fields.payment.value + ' (verified manually; not charged by this form)');
   if (tier && tier !== residentNote) details.push('Included: a few small candy pieces');
   if (tier && tier !== residentNote && treat.value) details.push('Treat preference: ' + treat.value);
   if (withPrint(tier) && fields.print.value) details.push('3D print: ' + fields.print.value);
@@ -119,6 +131,7 @@ function updateOrderLink() {
   if (withPrint(tier) && !fields.print.value) details.push('3D print: please specify your choice here.');
   const formUrl = new URL(order.action);
   if (tier) formUrl.searchParams.set('q6_radio4', tier);
+  if (tier !== residentNote && fields.payment.value) formUrl.searchParams.set('paymentMethod', fields.payment.value);
   if (tier === '$5' && fields.drink.value) formUrl.searchParams.set('drinkChoice', fields.drink.value);
   formUrl.searchParams.set('thisWeeks', selectedAddOn ? selectedAddOn + ' (+$2)' : 'No add-on');
   formUrl.searchParams.set('q12_textarea10', details.join('\n'));

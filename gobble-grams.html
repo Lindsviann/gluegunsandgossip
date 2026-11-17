@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#39231b">
   <meta name="description" content="Send a free resident note or choose a Gobble Gram gift. Payment instructions for cash, Cash App, Venmo, and Apple Cash.">
   <title>Gobble Grams | Glue Guns &amp; Gossip</title>
-  <link rel="stylesheet" href="gobble-grams.css?v=20261117j">
-  <script src="gobble-grams.js?v=20261117j" defer></script>
+  <link rel="stylesheet" href="gobble-grams.css?v=20261117k">
+  <script src="gobble-grams.js?v=20261117k" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -46,6 +46,19 @@
     <div class="how-it-works shell"><span><b>1</b> Pick a little gift</span><span><b>2</b> Write something kind</span><span><b>3</b> Make someone smile</span></div><div class="giving-ribbon">💛 Little gifts. Thoughtful notes. Holiday joy for TSR residents &amp; staff.</div>
 
     <form class="order-form shell" id="gobble-order" action="https://form.jotform.com/263168212099056" method="get">
+      <fieldset class="option-section payment-start" id="payment-start">
+        <legend><h2>First, how do you plan to pay?</h2></legend>
+        <p>Choose now, then build your bag below. You’ll submit your order before paying separately.</p>
+        <div class="payment-choices">
+          <label><input type="radio" name="payment" value="Cash"> Cash</label>
+          <label><input type="radio" name="payment" value="Cash App"> Cash App</label>
+          <label><input type="radio" name="payment" value="Venmo"> Venmo</label>
+          <label><input type="radio" name="payment" value="Apple Cash by text"> Apple Cash</label>
+        </div>
+        <p id="payment-next-step" role="status">Your payment choice will carry to the order form. Free resident notes need no payment.</p>
+        <small>Choosing a method does not send money. Payments are verified manually; please pay only once.</small>
+      </fieldset>
+      <p id="free-payment-note" hidden>💛 Free resident note · $0 · No payment needed.</p>
       <fieldset id="packages">
         <legend><h2>Pick your little bundle of happy</h2></legend>
 
