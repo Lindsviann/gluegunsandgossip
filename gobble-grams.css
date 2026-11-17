@@ -403,3 +403,31 @@ footer a { margin-left: 8px; text-underline-offset: 3px; }
 .how-it-works b {display:inline-grid;place-items:center;border-radius:50%;width:28px;height:28px;background:#a13e26;color:#fff6dd;margin-right:7px;}
 .photo-grid .photo-card {border-radius:18px;overflow:hidden;box-shadow:0 4px 16px #61300b0b;transition:transform .2s,box-shadow .2s;}
 .photo-grid .choice:hover .photo-card {transform:translateY(-3px);box-shadow:0 8px 24px #61300b22;}
+
+/* Gift bags take center stage */
+:root{--accent:#bd3b22;--accent-dark:#902b18;--background:#fff8e8;--paper:#fffdf7}
+.hero{background:radial-gradient(circle at 12% 18%,#ffef98 0,transparent 36%),linear-gradient(135deg,#ffdb70,#ffb15c 65%,#f29559);border-bottom:8px solid #a93221}
+.hero .shell{padding-block:36px;gap:30px}
+.hero h1{color:#772b20;letter-spacing:-.055em;font-size:clamp(3.5rem,6.5vw,6.5rem)}
+.hero h1 em{color:#a93221;text-shadow:2px 3px 0 #fff4c0}
+.hero-name{font-weight:900;letter-spacing:.04em;color:#772b20;font-size:1.35rem;margin:12px 0}
+.hero figure{transform:rotate(1.5deg);border:5px solid white;box-shadow:10px 12px 0 #9f3d2625}
+.hero .btn-primary{border-radius:99px;box-shadow:0 5px 0 #7c281b}
+.hero .kicker{display:inline-block;background:#fff7da;border-radius:99px;padding:8px 14px;color:#853321}
+.giving-ribbon{background:#9e3021;color:#fff7d3;font-weight:800;letter-spacing:.02em}
+.how-it-works{padding:17px}
+.order-form{border-top:0;padding-top:32px}
+#packages legend h2{color:#923722;font-weight:bold}
+.package-subtitle{color:#9a542b;font-weight:700;font-size:1.12rem;margin:0 0 10px}
+.tiers{gap:18px;margin-top:24px;margin-bottom:26px}
+.package-choice .photo-card{border:3px solid #d17335;border-radius:24px;box-shadow:0 8px 0 #f0d5a9;transition:transform .2s}
+.package-choice:hover .photo-card{transform:translateY(-4px)}
+.package-choice .photo-name{background:#fff5d8;padding:17px}
+.package-choice .photo-name strong{font-family:Georgia,serif;font-weight:bold;font-size:1.4rem}
+.package-choice .photo-card::before{font-size:.8rem;padding:10px}
+.resident-choice{max-width:680px;margin:18px auto 0}
+.seasonal-showcase{border-top:2px dashed #e0bf8e;padding-top:24px;margin-top:12px;margin-bottom:30px}
+.seasonal-showcase h2{font-size:2rem}
+.seasonal-photo{height:210px}
+.seasonal-card{padding:18px}
+@media(max-width:760px){.hero .shell{padding-block:24px}.hero h1{font-size:3.8rem}.hero figure{transform:none}.tiers{gap:12px}.package-choice .photo-name{padding:12px}.package-choice .photo-name strong{font-size:1.17rem}.package-choice .photo-card::before{font-size:.7rem}.hero-name{font-size:1.2rem}}

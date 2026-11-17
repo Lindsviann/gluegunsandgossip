@@ -17,7 +17,7 @@ const summary = document.getElementById('order-summary');
 const hint = document.getElementById('order-hint');
 const actionBar = document.getElementById('order-actions');
 
-const smallTreats = ['Mini chocolate', 'Sucker'];
+const smallTreats = ['Assorted small candies', 'Mini chocolates', 'Suckers'];
 const fullSizeTreats = [
   'Hershey’s Milk Chocolate',
   'Reese’s',
@@ -55,10 +55,10 @@ function updateTreatOptions(tier) {
   treat.replaceChildren(new Option('Choose a treat', ''), ...options.map(value => new Option(value)));
   treat.value = options.includes(previous) ? previous : '';
   treat.dataset.tier = tier;
-  document.getElementById('treat-label').textContent = (tier === '$1' || tier === '$3') ? 'Choose your small candy' : 'Choose your candy or snack';
+  document.getElementById('treat-label').textContent = (tier === '$1' || tier === '$3') ? 'Small candy preference' : 'Choose your candy or snack';
   treatNote.textContent = tier === '$2'
-    ? 'Choose one candy bar or snack. All choices are subject to availability.'
-    : tier === '$5' ? 'Choose one candy or snack. All choices are subject to availability.' : 'This tier includes a mini chocolate or sucker. Choose $2 or $5 for a full-size candy bar or Rice Krispies Treat.';
+    ? 'A few small candy pieces are included, plus your choice of one full-size candy bar or snack. Subject to availability.'
+    : tier === '$5' ? 'A few small candy pieces are included, plus one treat choice. Subject to availability.' : 'Includes a few small candy pieces. Choose a preference; selection varies with availability.';
 }
 
 function syncOrder(event) {
@@ -105,7 +105,8 @@ syncOrder();
 function updateOrderLink() {
   const tier = fields.tier.value;
   const details = ['Card: ' + fields.card.value];
-  if (tier && tier !== residentNote && treat.value) details.push('Treat: ' + treat.value);
+  if (tier && tier !== residentNote) details.push('Included: a few small candy pieces');
+  if (tier && tier !== residentNote && treat.value) details.push('Treat preference: ' + treat.value);
   if (withPrint(tier) && fields.print.value) details.push('3D print: ' + fields.print.value);
   if (tier === '$5') {
     details.push('Mini pen topper: ' + fields.pen.value);
