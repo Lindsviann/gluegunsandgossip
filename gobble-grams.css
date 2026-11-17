@@ -431,3 +431,6 @@ footer a { margin-left: 8px; text-underline-offset: 3px; }
 .seasonal-photo{height:210px}
 .seasonal-card{padding:18px}
 @media(max-width:760px){.hero .shell{padding-block:24px}.hero h1{font-size:3.8rem}.hero figure{transform:none}.tiers{gap:12px}.package-choice .photo-name{padding:12px}.package-choice .photo-name strong{font-size:1.17rem}.package-choice .photo-card::before{font-size:.7rem}.hero-name{font-size:1.2rem}}
+.package-choice .photo-card{display:flex;flex-direction:column}
+.package-choice .photo-name{flex:1}
+.package-choice .photo-card>img{flex:none;aspect-ratio:4/3;object-fit:contain;background:#fff1d5}
