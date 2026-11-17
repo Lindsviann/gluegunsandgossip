@@ -24,6 +24,12 @@ const fullSizeTreats = [
   'Hershey’s with Almonds',
   'Kit Kat',
   'Rice Krispies Treat',
+  'M&M’s Milk Chocolate',
+  'M&M’s Peanut',
+  'Dot’s Original Pretzels',
+  'Cheez-It Extra Toasty',
+  'Gardetto’s Original Recipe',
+  'KIND Breakfast Protein Blueberry Almond',
 ];
 const treatsByTier = {
   '$1': [...smallTreats, 'Skip candy'],
@@ -49,10 +55,10 @@ function updateTreatOptions(tier) {
   treat.replaceChildren(new Option('Choose a treat', ''), ...options.map(value => new Option(value)));
   treat.value = options.includes(previous) ? previous : '';
   treat.dataset.tier = tier;
-  document.getElementById('treat-label').textContent = (tier === '$1' || tier === '$3') ? 'Choose your small candy' : 'Choose your candy bar or snack';
+  document.getElementById('treat-label').textContent = (tier === '$1' || tier === '$3') ? 'Choose your small candy' : 'Choose your candy or snack';
   treatNote.textContent = tier === '$2'
-    ? 'The package photo shows a full-size Hershey’s bar.'
-    : tier === '$5' ? 'Choose a small candy, full-size candy bar, or Rice Krispies Treat.' : 'This tier includes a mini chocolate or sucker. Choose $2 or $5 for a full-size candy bar or Rice Krispies Treat.';
+    ? 'Choose one candy bar or snack. All choices are subject to availability.'
+    : tier === '$5' ? 'Choose one candy or snack. All choices are subject to availability.' : 'This tier includes a mini chocolate or sucker. Choose $2 or $5 for a full-size candy bar or Rice Krispies Treat.';
 }
 
 function syncOrder(event) {
