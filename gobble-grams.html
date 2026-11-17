@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#39231b">
   <meta name="description" content="Send a free resident note or choose a Gobble Gram gift. Pay for gifts with cash or Cash App.">
   <title>Gobble Grams | Glue Guns &amp; Gossip</title>
-  <link rel="stylesheet" href="gobble-grams.css?v=3">
-  <script src="gobble-grams.js?v=3" defer></script>
+  <link rel="stylesheet" href="gobble-grams.css?v=4">
+  <script src="gobble-grams.js?v=4" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -91,14 +91,23 @@
       </fieldset>
 
       <fieldset class="option-section simmer-section" id="simmer-add-on" hidden disabled>
-        <legend><h2>This week's special: $2 simmer pot kit</h2></legend>
-        <p class="intro">Choose any paid Gobble Gram package and add a cozy simmer pot kit for just $2! <strong>November 16–22 only, while supplies last.</strong></p>
-        <label class="simmer-choice" for="simmer-option">
-          <input type="checkbox" name="simmer" id="simmer-option" value="Yes">
+        <legend><h2>This week's special: choose a $2 add-on</h2></legend>
+        <p class="intro">Choose any paid Gobble Gram package and add <strong>one</strong> seasonal gift for just $2. <strong>November 16–22 only, while supplies last.</strong></p>
+        <label class="simmer-choice" for="addon-simmer">
+          <input type="radio" name="addon" id="addon-simmer" value="Simmer Pot Kit">
           <span class="simmer-icon" aria-hidden="true">♨</span>
-          <span><strong>Add a simmer pot kit for $2</strong><small>A festive gift bag of dried fruit and warm spices, ready to simmer at home. Gift bag styles may vary.</small></span>
+          <span><strong>Simmer Pot Kit · +$2</strong><small>Unscented dried fruit and spices to simmer gently in water on the stove. Never leave unattended.</small></span>
         </label>
-        <p class="form-hint">For home fragrance, not food. Add to a pot of water, simmer on low, and never leave unattended.</p>
+        <label class="simmer-choice" for="addon-sachet" style="margin-top:10px">
+          <input type="radio" name="addon" id="addon-sachet" value="Apple Cinnamon Sachet">
+          <span class="simmer-icon" aria-hidden="true">♡</span>
+          <span><strong>Apple Cinnamon Sachet · +$2</strong><small>Pre-scented fragrance sachet for a car, bathroom, or closet. Do not heat, simmer, or eat.</small></span>
+        </label>
+        <label class="simmer-none" for="addon-none">
+          <input type="radio" name="addon" id="addon-none" value="None" checked>
+          No add-on
+        </label>
+        <p class="form-hint">Gift bag styles may vary. Scented sachets and stovetop simmer pot kits are separate products.</p>
       </fieldset>
 
       <fieldset class="option-section" id="message-card">
@@ -279,7 +288,7 @@
           <h3>Cash</h3>
           <p>Hand your payment to a Who Crew member and give them the sender name on your order.</p>
           <h3>Cash App</h3>
-          <p>Send the package price plus any selected $2 simmer pot add-on using the name or QR code below. Your total is shown before you continue to the order form.</p>
+          <p>Send the package price plus any selected $2 seasonal add-on using the name or QR code below. Your total is shown before you continue to the order form.</p>
           <p class="cash-name" id="cashtag">$GeeZoMathis</p>
           <div class="cash-actions">
             <button class="btn" type="button" id="copy-cashtag">Copy $Cashtag</button>
