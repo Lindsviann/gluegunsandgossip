@@ -3,6 +3,11 @@ const fields = order.elements;
 const residentNote = 'Free resident note';
 const treatSection = document.getElementById('treat-section');
 const extras = document.getElementById('extras-section');
+const simmerSection = document.getElementById('simmer-add-on');
+const simmerInput = document.getElementById('simmer-option');
+// Midnight Central Time immediately after Sunday, November 22, 2026.
+const simmerOfferEnd = Date.parse('2026-11-23T06:00:00Z');
+const simmerOfferActive = () => Date.now() < simmerOfferEnd;
 const printSection = document.getElementById('prints');
 const printNav = document.getElementById('print-nav');
 const treat = document.getElementById('treat-option');
@@ -61,6 +66,10 @@ function syncOrder(event) {
     if (selectedPrint) selectedPrint.checked = false;
   }
   const free = tier === residentNote;
+  const showSimmer = Boolean(tier) && !free && simmerOfferActive();
+  showFieldset(simmerSection, showSimmer);
+  if (!showSimmer) simmerInput.checked = false;
+  const hasSimmer = showSimmer && simmerInput.checked;
   printInputs[0].required = withPrint(tier);
   showFieldset(treatSection, Boolean(tier) && !free);
   showFieldset(printSection, !free);
@@ -69,13 +78,15 @@ function syncOrder(event) {
   updateTreatOptions(tier);
 
   actionBar.classList.toggle('is-active', Boolean(tier));
-  summary.textContent = free ? residentNote : tier ? tier + ' Gobble Gram' : 'Your Gobble Gram';
+  const total = tier && !free ? Number(tier.slice(1)) + (hasSimmer ? 2 : 0) : 0;
+  summary.textContent = free ? residentNote : tier ? '$' + total + ' total · ' + tier + ' Gobble Gram' : 'Your Gobble Gram';
   hint.textContent = !tier ? 'Pick a package to get started.'
     : free ? 'Personalized note · $0'
     : [
       treat.value || 'Pick a treat',
       withPrint(tier) ? fields.print.value || 'Pick one print' : '',
       tier === '$5' && fields.pen.value !== 'Surprise me' ? fields.pen.value + ' topper' : '',
+      hasSimmer ? '+ $2 simmer pot kit' : '',
     ].filter(Boolean).join(' · ');
 }
 
@@ -94,6 +105,9 @@ order.addEventListener('submit', event => {
     details.push('Mini pen topper: ' + fields.pen.value);
     details.push('Drink preference: ' + (fields.drink.value.trim() || 'Any available'));
   }
+  const addSimmer = tier !== residentNote && simmerOfferActive() && simmerInput.checked;
+  if (addSimmer) details.push('Simmer pot kit add-on: Yes (+$2; while supplies last)');
+  details.push('Total due: ' + (tier === residentNote ? '$0' : '$' + (Number(tier.slice(1)) + (addSimmer ? 2 : 0))));
 
   const formUrl = new URL(order.action);
   formUrl.searchParams.set('q6_radio4', tier);
