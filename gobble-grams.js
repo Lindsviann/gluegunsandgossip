@@ -99,7 +99,7 @@ function syncOrder(event) {
 
   actionBar.classList.toggle('is-active', Boolean(tier));
   const total = (tier && !free ? Number(tier.slice(1)) : 0) + addonPrice;
-  summary.textContent = free ? residentNote + ' ·  : tier ? '$' + total + ' total · ' + tier + ' Gobble Gram' : 'Your Gobble Gram';
+  summary.textContent = tier ? '$' + total + ' total · ' + (free ? residentNote : tier + ' Gobble Gram') : 'Your Gobble Gram';
   hint.textContent = !tier ? 'Browse here or go straight to the order form.'
     : free ? 'Personalized note · ' + (selectedAddOn || 'No extras')
     : [
@@ -129,7 +129,7 @@ function updateOrderLink() {
   const addonPrice = selectedAddOn.includes('+$4') ? 4 : selectedAddOn ? 2 : 0;
   if (selectedAddOn) details.push('A Little Extra Gobble: ' + selectedAddOn);
   if (selectedAddOn.includes('3D print')) details.push('Extra 3D print choice: please specify here.');
-  if (tier) details.push('Total due: ' + (');
+  if (tier) details.push('Total due: $' + ((tier === residentNote ? 0 : Number(tier.slice(1))) + addonPrice));
   if (['$2', '$3', '$5'].includes(tier) && !treat.value) details.push('Treat: please specify your choice here.');
   if (withPrint(tier) && !fields.print.value) details.push('3D print: please specify your choice here.');
   const formUrl = new URL(order.action);
@@ -154,138 +154,3 @@ copyButton.addEventListener('click', async () => {
     copyButton.textContent = cashtag;
   }
 });
-
- + total + ' total' : tier ? '$' + total + ' total · ' + tier + ' Gobble Gram' : 'Your Gobble Gram';
-  hint.textContent = !tier ? 'Browse here or go straight to the order form.'
-    : free ? 'Personalized note · $0'
-    : [
-      ['$2', '$3', '$5'].includes(tier) ? treat.value || 'Pick a treat' : 'Personalized message only',
-      withPrint(tier) ? fields.print.value || 'Pick one print' : '',
-      ['$3', '$5'].includes(tier) ? fields.drink.value || 'Pick a drink' : '',
-      selectedAddOn ? '+ $2 ' + selectedAddOn : '',
-    ].filter(Boolean).join(' · ');
-  updateOrderLink();
-}
-
-order.addEventListener('change', syncOrder);
-window.addEventListener('pageshow', syncOrder);
-syncOrder();
-
-function updateOrderLink() {
-  const tier = fields.tier.value;
-  const details = ['Card: ' + fields.card.value];
-  if ((tier !== residentNote || fields.addon.value !== 'No add-on') && fields.payment.value) details.push('Planned payment: ' + fields.payment.value + ' (verified manually; not charged by this form)');
-  if (['$2', '$3', '$5'].includes(tier) && treat.value) details.push('Treat preference: ' + treat.value);
-  if (withPrint(tier) && fields.print.value) details.push('3D print: ' + fields.print.value);
-  if (['$3', '$5'].includes(tier)) {
-    details.push('Drink preference: ' + (fields.drink.value.trim() || 'Any available'));
-    if (fields.drink.value === 'Other — write in request') details.push('Requested drink (subject to availability): ' + (fields.otherDrink.value.trim() || 'Please specify'));
-  }
-  const selectedAddOn = tier && tier !== residentNote && simmerOfferActive() && fields.addon.value !== 'None' ? fields.addon.value : '';
-  if (selectedAddOn) details.push('Seasonal add-on: ' + selectedAddOn + ' (+$2; while supplies last)');
-  if (tier) details.push('Total due: ' + (tier === residentNote ? '$0' : '$' + (Number(tier.slice(1)) + (selectedAddOn ? 2 : 0))));
-  if (['$2', '$3', '$5'].includes(tier) && !treat.value) details.push('Treat: please specify your choice here.');
-  if (withPrint(tier) && !fields.print.value) details.push('3D print: please specify your choice here.');
-  const formUrl = new URL(order.action);
-  if (tier) formUrl.searchParams.set('q6_radio4', tier);
-  if ((tier !== residentNote || fields.addon.value !== 'No add-on') && fields.payment.value) formUrl.searchParams.set('paymentMethod', fields.payment.value);
-  if (['$3', '$5'].includes(tier) && fields.drink.value) formUrl.searchParams.set('drinkChoice', fields.drink.value);
-  if (['$3', '$5'].includes(tier) && fields.drink.value === 'Other — write in request') formUrl.searchParams.set('requestedDrink', fields.otherDrink.value.trim());
-  formUrl.searchParams.set('thisWeeks', selectedAddOn ? selectedAddOn + ' (+$2)' : 'No add-on');
-  formUrl.searchParams.set('q12_textarea10', details.join('\n'));
-  formUrl.search = formUrl.search.replaceAll('+', '%20');
-  document.getElementById('continue-order').href = formUrl.href;
-}
-order.addEventListener('input', syncOrder);
-
-const copyButton = document.getElementById('copy-cashtag');
-copyButton.addEventListener('click', async () => {
-  const cashtag = document.getElementById('cashtag').textContent.trim();
-  try {
-    await navigator.clipboard.writeText(cashtag);
-    copyButton.textContent = 'Copied';
-  } catch {
-    copyButton.textContent = cashtag;
-  }
-});
-
- + ((tier === residentNote ? 0 : Number(tier.slice(1))) + addonPrice)));
-  if (['$2', '$3', '$5'].includes(tier) && !treat.value) details.push('Treat: please specify your choice here.');
-  if (withPrint(tier) && !fields.print.value) details.push('3D print: please specify your choice here.');
-  const formUrl = new URL(order.action);
-  if (tier) formUrl.searchParams.set('q6_radio4', tier);
-  if ((tier !== residentNote || fields.addon.value !== 'No add-on') && fields.payment.value) formUrl.searchParams.set('paymentMethod', fields.payment.value);
-  if (['$3', '$5'].includes(tier) && fields.drink.value) formUrl.searchParams.set('drinkChoice', fields.drink.value);
-  if (['$3', '$5'].includes(tier) && fields.drink.value === 'Other — write in request') formUrl.searchParams.set('requestedDrink', fields.otherDrink.value.trim());
-  formUrl.searchParams.set('thisWeeks', selectedAddOn ? selectedAddOn + ' (+$2)' : 'No add-on');
-  formUrl.searchParams.set('q12_textarea10', details.join('\n'));
-  formUrl.search = formUrl.search.replaceAll('+', '%20');
-  document.getElementById('continue-order').href = formUrl.href;
-}
-order.addEventListener('input', syncOrder);
-
-const copyButton = document.getElementById('copy-cashtag');
-copyButton.addEventListener('click', async () => {
-  const cashtag = document.getElementById('cashtag').textContent.trim();
-  try {
-    await navigator.clipboard.writeText(cashtag);
-    copyButton.textContent = 'Copied';
-  } catch {
-    copyButton.textContent = cashtag;
-  }
-});
-
- + total + ' total' : tier ? '$' + total + ' total · ' + tier + ' Gobble Gram' : 'Your Gobble Gram';
-  hint.textContent = !tier ? 'Browse here or go straight to the order form.'
-    : free ? 'Personalized note · $0'
-    : [
-      ['$2', '$3', '$5'].includes(tier) ? treat.value || 'Pick a treat' : 'Personalized message only',
-      withPrint(tier) ? fields.print.value || 'Pick one print' : '',
-      ['$3', '$5'].includes(tier) ? fields.drink.value || 'Pick a drink' : '',
-      selectedAddOn ? '+ $2 ' + selectedAddOn : '',
-    ].filter(Boolean).join(' · ');
-  updateOrderLink();
-}
-
-order.addEventListener('change', syncOrder);
-window.addEventListener('pageshow', syncOrder);
-syncOrder();
-
-function updateOrderLink() {
-  const tier = fields.tier.value;
-  const details = ['Card: ' + fields.card.value];
-  if ((tier !== residentNote || fields.addon.value !== 'No add-on') && fields.payment.value) details.push('Planned payment: ' + fields.payment.value + ' (verified manually; not charged by this form)');
-  if (['$2', '$3', '$5'].includes(tier) && treat.value) details.push('Treat preference: ' + treat.value);
-  if (withPrint(tier) && fields.print.value) details.push('3D print: ' + fields.print.value);
-  if (['$3', '$5'].includes(tier)) {
-    details.push('Drink preference: ' + (fields.drink.value.trim() || 'Any available'));
-    if (fields.drink.value === 'Other — write in request') details.push('Requested drink (subject to availability): ' + (fields.otherDrink.value.trim() || 'Please specify'));
-  }
-  const selectedAddOn = tier && tier !== residentNote && simmerOfferActive() && fields.addon.value !== 'None' ? fields.addon.value : '';
-  if (selectedAddOn) details.push('Seasonal add-on: ' + selectedAddOn + ' (+$2; while supplies last)');
-  if (tier) details.push('Total due: ' + (tier === residentNote ? '$0' : '$' + (Number(tier.slice(1)) + (selectedAddOn ? 2 : 0))));
-  if (['$2', '$3', '$5'].includes(tier) && !treat.value) details.push('Treat: please specify your choice here.');
-  if (withPrint(tier) && !fields.print.value) details.push('3D print: please specify your choice here.');
-  const formUrl = new URL(order.action);
-  if (tier) formUrl.searchParams.set('q6_radio4', tier);
-  if ((tier !== residentNote || fields.addon.value !== 'No add-on') && fields.payment.value) formUrl.searchParams.set('paymentMethod', fields.payment.value);
-  if (['$3', '$5'].includes(tier) && fields.drink.value) formUrl.searchParams.set('drinkChoice', fields.drink.value);
-  if (['$3', '$5'].includes(tier) && fields.drink.value === 'Other — write in request') formUrl.searchParams.set('requestedDrink', fields.otherDrink.value.trim());
-  formUrl.searchParams.set('thisWeeks', selectedAddOn ? selectedAddOn + ' (+$2)' : 'No add-on');
-  formUrl.searchParams.set('q12_textarea10', details.join('\n'));
-  formUrl.search = formUrl.search.replaceAll('+', '%20');
-  document.getElementById('continue-order').href = formUrl.href;
-}
-order.addEventListener('input', syncOrder);
-
-const copyButton = document.getElementById('copy-cashtag');
-copyButton.addEventListener('click', async () => {
-  const cashtag = document.getElementById('cashtag').textContent.trim();
-  try {
-    await navigator.clipboard.writeText(cashtag);
-    copyButton.textContent = 'Copied';
-  } catch {
-    copyButton.textContent = cashtag;
-  }
-});
-
