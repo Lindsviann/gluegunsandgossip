@@ -460,3 +460,6 @@ footer a { margin-left: 8px; text-underline-offset: 3px; }
 .payment-choices input{accent-color:#a34426;margin-right:8px}
 #payment-next-step{font-weight:650;line-height:1.6}
 #free-payment-note{background:#fff4d9;padding:18px;border-radius:15px;font-weight:bold}
+
+/* Four-part bundle previews use actual existing site photos */
+.bundle-visual{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:8px;background:#fff7e8;min-height:175px;align-items:stretch}.bundle-visual>img{width:100%;height:125px;object-fit:contain;background:#fff;border-radius:10px}.bundle-visual>img:only-child{grid-column:1/-1;height:175px}.sample-message{background:#fffdf5;border:2px dashed #d88a53;border-radius:10px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8px;font-weight:800;color:#8b3d27;font-size:1rem}.sample-message small{font-size:.75rem;font-weight:500;margin-top:8px;color:#604634}
