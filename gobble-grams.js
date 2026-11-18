@@ -1,4 +1,5 @@
 const order = document.getElementById('gobble-order');
+if (order) {
 const fields = order.elements;
 const paymentStart = document.getElementById('payment-start');
 const paymentNext = document.getElementById('payment-next-step');
@@ -133,9 +134,10 @@ function updateOrderLink() {
   if (['$2', '$3', '$5'].includes(tier) && !treat.value) details.push('Treat: please specify your choice here.');
   if (withPrint(tier) && !fields.print.value) details.push('3D print: please specify your choice here.');
   const formUrl = new URL(order.action);
-  if (tier) formUrl.searchParams.set('q6_radio4', tier);
+  const formTier = {'$1':'$1 — Message only','$2':'$2 — Message plus treat','$3':'$3 — Message plus mini candies and drink','$5':'$5 — Message plus treat, drink, 3D print, and mini pen'}[tier] || tier;
+  if (tier) formUrl.searchParams.set('q6_radio4', formTier);
   if ((tier !== residentNote || fields.addon.value !== 'No add-on') && fields.payment.value) formUrl.searchParams.set('paymentMethod', fields.payment.value);
-  if (['$3', '$5'].includes(tier) && fields.drink.value) formUrl.searchParams.set('drinkChoice', fields.drink.value);
+  if (['$3', '$5'].includes(tier) && fields.drink.value) formUrl.searchParams.set('drinkChoice', {'Full-size Alani':'Alani','Full-size Dr Pepper':'Dr Pepper','LaCroix Lemon sparkling water':'LaCroix'}[fields.drink.value] || fields.drink.value);
   if (['$3', '$5'].includes(tier) && fields.drink.value === 'Other — write in request') formUrl.searchParams.set('requestedDrink', fields.otherDrink.value.trim());
   formUrl.searchParams.set('thisWeeks', selectedAddOn || 'No add-on');
   formUrl.searchParams.set('q12_textarea10', details.join('\n'));
@@ -144,6 +146,7 @@ function updateOrderLink() {
 }
 order.addEventListener('input', syncOrder);
 
+}
 const copyButton = document.getElementById('copy-cashtag');
 copyButton.addEventListener('click', async () => {
   const cashtag = document.getElementById('cashtag').textContent.trim();
