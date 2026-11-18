@@ -3,7 +3,7 @@ const fields = order.elements;
 const paymentStart = document.getElementById('payment-start');
 const paymentNext = document.getElementById('payment-next-step');
 const paymentSteps = {
-  'Cash': 'After submitting, give cash to a Who Crew member and tell them the sender name on your order.',
+  'Cash': 'After submitting, give cash to Lindsey or Carrie and tell them the sender name on your order.',
   'Cash App': 'After submitting, send your total to $GeeZoMathis on Cash App. Include your first and last name and “Gobble Gram order”; no resident details.',
   'Venmo': 'After submitting, send your total to @Lindsey-Mathis-1 on Venmo. Include your first and last name and “Gobble Gram order”; no resident details.',
   'Apple Cash by text': 'After submitting, text 816-868-6363 to coordinate Apple Cash. Include your sender name and “Gobble Gram order”; no resident details.'
@@ -41,8 +41,8 @@ const fullSizeTreats = [
 ];
 const treatsByTier = {
   '$1': [],
-  '$2': fullSizeTreats,
-  '$3': fullSizeTreats,
+  '$2': ['Assorted mini candies', 'Cheez-It Extra Toasty', 'Dot’s Original Pretzels'],
+  '$3': ['Assorted mini candies'],
   '$5': fullSizeTreats,
 };
 
