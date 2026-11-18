@@ -40,14 +40,14 @@ const fullSizeTreats = [
   'KIND Breakfast Protein Blueberry Almond',
 ];
 const treatsByTier = {
-  '$1': [...smallTreats, 'Skip candy'],
+  '$1': [],
   '$2': fullSizeTreats,
-  '$3': [...smallTreats, 'Skip candy'],
-  '$5': [...smallTreats, ...fullSizeTreats, 'Skip candy'],
+  '$3': fullSizeTreats,
+  '$5': fullSizeTreats,
 };
 
 function withPrint(tier) {
-  return tier === '$3' || tier === '$5';
+  return tier === '$5';
 }
 
 function showFieldset(fieldset, show) {
@@ -63,17 +63,15 @@ function updateTreatOptions(tier) {
   treat.replaceChildren(new Option('Choose a treat', ''), ...options.map(value => new Option(value)));
   treat.value = options.includes(previous) ? previous : '';
   treat.dataset.tier = tier;
-  document.getElementById('treat-label').textContent = (tier === '$1' || tier === '$3') ? 'Small candy preference' : 'Choose your candy or snack';
-  treatNote.textContent = tier === '$2'
-    ? 'A few small candy pieces are included, plus your choice of one full-size candy bar or snack. Subject to availability.'
-    : tier === '$5' ? 'A few small candy pieces are included, plus one treat choice. Subject to availability.' : 'Includes a few small candy pieces. Choose a preference; selection varies with availability.';
+  document.getElementById('treat-label').textContent = 'Choose your candy or snack';
+  treatNote.textContent = 'Includes one candy or snack. Subject to availability.';
 }
 
 function syncOrder(event) {
   let tier = fields.tier.value;
   if (event?.target.name === 'print' && !withPrint(tier)) {
-    fields.tier.value = '$3';
-    tier = '$3';
+    fields.tier.value = '$5';
+    tier = '$5';
   }
 
   if (!withPrint(tier)) {
@@ -89,11 +87,11 @@ function syncOrder(event) {
   if (!showAddOn) addonNone.checked = true;
   const selectedAddOn = showAddOn && fields.addon.value !== 'None' ? fields.addon.value : '';
   printInputs[0].required = withPrint(tier);
-  showFieldset(treatSection, Boolean(tier) && !free);
+  showFieldset(treatSection, ['$2', '$3', '$5'].includes(tier));
   showFieldset(printSection, !free);
   printNav.hidden = free;
-  showFieldset(extras, tier === '$5');
-  const otherDrink = tier === '$5' && fields.drink.value === 'Other — write in request';
+  showFieldset(extras, ['$3', '$5'].includes(tier));
+  const otherDrink = ['$3', '$5'].includes(tier) && fields.drink.value === 'Other — write in request';
   document.getElementById('other-drink-wrap').hidden = !otherDrink;
   fields.otherDrink.disabled = !otherDrink;
   updateTreatOptions(tier);
@@ -104,9 +102,9 @@ function syncOrder(event) {
   hint.textContent = !tier ? 'Browse here or go straight to the order form.'
     : free ? 'Personalized note · $0'
     : [
-      treat.value || 'Pick a treat',
+      ['$2', '$3', '$5'].includes(tier) ? treat.value || 'Pick a treat' : 'Personalized message only',
       withPrint(tier) ? fields.print.value || 'Pick one print' : '',
-      tier === '$5' && fields.pen.value !== 'Surprise me' ? fields.pen.value + ' topper' : '',
+      ['$3', '$5'].includes(tier) ? fields.drink.value || 'Pick a drink' : '',
       selectedAddOn ? '+ $2 ' + selectedAddOn : '',
     ].filter(Boolean).join(' · ');
   updateOrderLink();
@@ -120,24 +118,22 @@ function updateOrderLink() {
   const tier = fields.tier.value;
   const details = ['Card: ' + fields.card.value];
   if (tier !== residentNote && fields.payment.value) details.push('Planned payment: ' + fields.payment.value + ' (verified manually; not charged by this form)');
-  if (tier && tier !== residentNote) details.push('Included: a few small candy pieces');
-  if (tier && tier !== residentNote && treat.value) details.push('Treat preference: ' + treat.value);
+  if (['$2', '$3', '$5'].includes(tier) && treat.value) details.push('Treat preference: ' + treat.value);
   if (withPrint(tier) && fields.print.value) details.push('3D print: ' + fields.print.value);
-  if (tier === '$5') {
-    details.push('Mini pen topper: ' + fields.pen.value);
+  if (['$3', '$5'].includes(tier)) {
     details.push('Drink preference: ' + (fields.drink.value.trim() || 'Any available'));
     if (fields.drink.value === 'Other — write in request') details.push('Requested drink (subject to availability): ' + (fields.otherDrink.value.trim() || 'Please specify'));
   }
   const selectedAddOn = tier && tier !== residentNote && simmerOfferActive() && fields.addon.value !== 'None' ? fields.addon.value : '';
   if (selectedAddOn) details.push('Seasonal add-on: ' + selectedAddOn + ' (+$2; while supplies last)');
   if (tier) details.push('Total due: ' + (tier === residentNote ? '$0' : '$' + (Number(tier.slice(1)) + (selectedAddOn ? 2 : 0))));
-  if (tier && tier !== residentNote && !treat.value) details.push('Treat: please specify your choice here.');
+  if (['$2', '$3', '$5'].includes(tier) && !treat.value) details.push('Treat: please specify your choice here.');
   if (withPrint(tier) && !fields.print.value) details.push('3D print: please specify your choice here.');
   const formUrl = new URL(order.action);
   if (tier) formUrl.searchParams.set('q6_radio4', tier);
   if (tier !== residentNote && fields.payment.value) formUrl.searchParams.set('paymentMethod', fields.payment.value);
-  if (tier === '$5' && fields.drink.value) formUrl.searchParams.set('drinkChoice', fields.drink.value);
-  if (tier === '$5' && fields.drink.value === 'Other — write in request') formUrl.searchParams.set('requestedDrink', fields.otherDrink.value.trim());
+  if (['$3', '$5'].includes(tier) && fields.drink.value) formUrl.searchParams.set('drinkChoice', fields.drink.value);
+  if (['$3', '$5'].includes(tier) && fields.drink.value === 'Other — write in request') formUrl.searchParams.set('requestedDrink', fields.otherDrink.value.trim());
   formUrl.searchParams.set('thisWeeks', selectedAddOn ? selectedAddOn + ' (+$2)' : 'No add-on');
   formUrl.searchParams.set('q12_textarea10', details.join('\n'));
   formUrl.search = formUrl.search.replaceAll('+', '%20');
