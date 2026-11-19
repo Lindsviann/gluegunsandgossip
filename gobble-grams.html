@@ -6,15 +6,15 @@
   <meta name="theme-color" content="#39231b">
   <meta name="description" content="Send a free resident note or choose a Gobble Gram gift. Payment instructions for cash, Cash App, Venmo, and Apple Cash.">
   <title>Gobble Grams | Glue Guns &amp; Gossip</title>
-  <link rel="stylesheet" href="gobble-grams.css?v=20261117l">
-  <script src="gobble-grams.js?v=20261118-drinkfix" defer></script>
+  <link rel="stylesheet" href="gobble-grams.css?v=20261119-tsr">
+  <script src="gobble-grams.js?v=20261119-tsr" defer></script>
 </head>
 <body>
   <header class="site-header">
     <div class="shell">
       <a href="./" class="wordmark">Glue Guns &amp; Gossip</a>
       <nav class="site-nav" aria-label="Page sections">
-        <a href="#packages">Packages</a>
+        <a href="#gift-gallery">Packages</a>
         <a href="#seasonal">+$2 extras</a>
         <a href="#prints" id="print-nav">3D prints</a>
         <a href="#pay">Payment</a>
@@ -30,288 +30,85 @@
           <p class="holiday-doodle" aria-hidden="true">🍂 🦃 💌</p><h1 id="gobble-title">You’ve been<br><em>Gobbled!</em></h1><p class="hero-name">Little bags. BIG smiles.</p>
           <p class="hero-copy">Give your work bestie, a favorite resident, or someone who needs a smile a little Thanksgiving surprise. Pick a bag, add your message, and make their day!</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#payment-start">Build their Gobble Gram →</a><a class="text-link" href="#packages">Browse gifts</a>
-            <a class="text-link" href="#resident-note">Free resident note</a>
+            <a class="btn btn-primary" href="https://form.jotform.com/263168212099056">Build their Gobble Gram</a><a class="text-link" href="#gift-gallery">Browse gifts</a>
+            <a class="text-link" href="https://form.jotform.com/263168212099056?q6_radio4=Free%20resident%20note">Free resident note</a>
           </div>
         </div>
         <figure>
-          <a href="bag-5-candy.webp" target="_blank" rel="noopener" aria-label="Open the full example of a finished five-dollar Gobble Gram">
-            <img src="bag-5-candy.webp" width="1200" height="900" fetchpriority="high"
-              alt="Gobble Gram gift bag with a colored turkey note, Hershey’s bar, orange octagon keychain, astronaut mini pen, and a full-size Dr Pepper">
-          </a>
-          <figcaption>$5 gift example · A note, a few candies, a treat, a keepsake, a mini pen + a drink!</figcaption>
+          <img src="gram-card-color.webp" width="960" height="587" fetchpriority="high" alt="Personalized Gobble Gram turkey message card"><figcaption>Start with a thoughtful message. Add a treat, drink, or 3D print.</figcaption>
         </figure>
       </div>
     </section>
     <div class="how-it-works shell"><span><b>1</b> Pick a little gift</span><span><b>2</b> Write something kind</span><span><b>3</b> Make someone smile</span></div><div class="giving-ribbon">💛 Little gifts. Thoughtful notes. Holiday joy for TSR residents &amp; staff.</div>
 
-    <form class="order-form shell" id="gobble-order" action="https://form.jotform.com/263168212099056" method="get">
-      <fieldset class="option-section payment-start" id="payment-start">
-        <legend><h2>First, how do you plan to pay?</h2></legend>
-        <p>Choose now, then build your bag below. You’ll submit your order before paying separately.</p>
-        <div class="payment-choices">
-          <label><input type="radio" name="payment" value="Cash"> Cash</label>
-          <label><input type="radio" name="payment" value="Cash App"> Cash App</label>
-          <label><input type="radio" name="payment" value="Venmo"> Venmo</label>
-          <label><input type="radio" name="payment" value="Apple Cash by text"> Apple Cash</label>
-        </div>
-        <p id="payment-next-step" role="status">Your payment choice will carry to the order form. Free resident notes need no payment.</p>
-        <small>Choosing a method does not send money. Payments are verified manually; please pay only once.</small>
-      </fieldset>
-      <p id="free-payment-note" hidden>💛 Free resident note · $0 · No payment needed.</p>
-      <fieldset id="packages">
-        <legend><h2>Pick your little bundle of happy</h2></legend>
-
-        <p class="package-subtitle">A thank-you. A giggle. A just-because surprise.</p>
-        <p class="intro">Four ways to make someone smile, starting at $1. Tap your package to make it theirs. Gift photos show examples; choose from the available items below.</p>
-        <div class="tiers">
-          <label class="choice package-choice">
-            <input type="radio" name="tier" value="$1" required>
-            <span class="photo-card">
-              <div class="bundle-visual"><img src="gram-card-color.webp" alt="Colorful Gobble Gram message card"></div>
-              <span class="photo-name"><strong>$1 · The sweet note</strong><small>A cute personalized Gobble Gram message.</small></span>
-            </span>
-          </label>
-          <label class="choice package-choice">
-            <input type="radio" name="tier" value="$2" required>
-            <span class="photo-card">
-              <div class="bundle-visual"><div class="sample-message">You’re amazing!<small>So glad you’re part of our team!</small></div><img src="bag-2-candy.webp" alt="Example wrapped treat bag"></div>
-              <span class="photo-name"><strong>$2 · A little treat to smile about</strong><small>Personalized message plus a treat: mini candies, sucker, Cheez-It, Dot’s pretzels, or another available snack.</small></span>
-            </span>
-          </label>
-          <label class="choice package-choice">
-            <input type="radio" name="tier" value="$3" required>
-            <span class="photo-card">
-              <div class="bundle-visual"><div class="sample-message">You make days brighter!<small>A little gobble of gratitude.</small></div><img src="bag-2-candy.webp" alt="Example wrapped treat bag"><img src="lacroix-lemon-festive.webp" alt="Example drink: LaCroix Lemon"></div>
-              <span class="photo-name"><strong>$3 · A sweet treat + sip</strong><small>Personalized message, mini candies or an available treat, and your choice of drink.</small></span>
-            </span>
-          </label>
-          <label class="choice package-choice">
-            <input type="radio" name="tier" value="$5" required>
-            <span class="photo-card">
-              <div class="bundle-visual"><div class="sample-message">You’ve been gobbled!<small>You’re one of a kind!</small></div><img src="bag-2-candy.webp" alt="Example treat bag"><img src="lacroix-lemon-festive.webp" alt="Example drink"><img src="gram-flexi-elf.webp" alt="Example cute flexi elf 3D print"></div>
-              <span class="photo-name"><strong>$5 · The ultimate Gobble Gram</strong><small>Personalized message, treat, drink, one cute 3D print, and a mini pen.</small></span>
-            </span>
-          </label>
-        </div>
-        <a class="special-teaser" href="#seasonal"><span>🍂 THIS WEEK’S SPECIAL</span><strong>+$2 · Apple Cinnamon Sachet or Simmer Pot Kit</strong><small>This week only · Add one to any paid bag · While supplies last →</small></a>
-        <label class="choice resident-choice" id="resident-note">
-          <input type="radio" name="tier" value="Free resident note" required>
-          <span class="photo-card">
-            <img src="gram-card-color.webp" alt="" width="960" height="587" loading="lazy" decoding="async">
-            <span class="photo-name">
-              <strong>Free resident note</strong>
-              <small>Residents can send a thoughtful Gobble Gram note to anyone for free. Personalized note only.</small>
-            </span>
-            <span class="resident-price" aria-hidden="true">$0</span>
-          </span>
-        </label>
-      </fieldset>
-
-
-      <fieldset class="option-section" id="message-card">
-        <legend><h2>Choose your message card</h2></legend>
-        <p class="intro">Browsing choices here is optional. Your selections carry to the order form, where you can finish your message and recipient details.</p>
-        <div class="message-grid">
-          <label class="choice message-choice">
-            <input type="radio" name="card" value="Full-color turkey" checked>
-            <span class="photo-card">
-              <img src="gram-card-color.webp" alt="" width="960" height="587" loading="lazy" decoding="async">
-              <span class="photo-name"><strong>Full-color turkey</strong><small>Shown with a sample message</small></span>
-            </span>
-          </label>
-          <label class="choice message-choice">
-            <input type="radio" name="card" value="Color-in turkey" >
-            <span class="photo-card">
-              <img src="gram-card-outline.webp" alt="" width="960" height="587" loading="lazy" decoding="async">
-              <span class="photo-name"><strong>Color-in turkey</strong><small>Black-and-white outlines</small></span>
-            </span>
-          </label>
-        </div>
-      </fieldset>
-
-      <fieldset class="option-section" id="treat-section" hidden disabled>
-        <legend><h2>Choose your treat</h2></legend>
-        <label class="stacked-label" id="treat-label" for="treat-option">Choose your treat</label>
-        <select id="treat-option" name="treat" required></select>
-        <p class="form-hint" id="treat-note"></p>
-      </fieldset>
-
-      <fieldset class="option-section" id="prints" aria-describedby="print-instructions print-personalization">
-        <legend><h2>Pick your 3D print</h2></legend>
-        <p class="intro" id="print-instructions">One print comes with $3 and $5 Gobble Grams. Tap a photo to start with $3. Choose one item, not every item pictured.</p>
-        <p class="intro" id="print-personalization"><strong>Make someone feel extra special this Thanksgiving.</strong> Want to personalize your 3D print? Tell us what you have in mind in the “Additional delivery instructions” field on the order form. We’ll let you know what we can do.</p>
-        <p class="photo-disclosure">Pick a little personality for their bag! Sign photos may show both sides of one sign. Colors and availability vary; background decorations are not included.</p><div class="photo-grid">
-          <label class="choice ">
-            <input type="radio" name="print" value="Flat Flexi Turkey (Orange)" >
-            <span class="photo-card">
-              <span class="product-window"><img class="panel-image panels-2 panel-1" src="turkeys-festive.webp" alt="Orange flat articulated turkey" loading="lazy" decoding="async"></span>
-              <span class="photo-name"><strong>Flat Flexi Turkey</strong><small>Orange</small></span>
-            </span>
-          </label>
-          <label class="choice ">
-            <input type="radio" name="print" value="Flat Flexi Turkey (Brown)" >
-            <span class="photo-card">
-              <span class="product-window"><img class="panel-image panels-2 panel-0" src="turkeys-festive.webp" alt="Brown flat articulated turkey" loading="lazy" decoding="async"></span>
-              <span class="photo-name"><strong>Flat Flexi Turkey</strong><small>Brown</small></span>
-            </span>
-          </label>
-          <label class="choice ">
-            <input type="radio" name="print" value="Turkey with Flexi Legs (Orange)" >
-            <span class="photo-card">
-              <img src="gram-turkey-with-flexi-legs.webp" alt="" width="720" height="576" loading="lazy" decoding="async">
-              <span class="photo-name"><strong>Turkey with Flexi Legs</strong><small>Orange</small></span>
-            </span>
-          </label>
-          <label class="choice ">
-            <input type="radio" name="print" value="Mini Clog Keychain (White)" >
-            <span class="photo-card">
-              <span class="product-window"><img class="panel-image panels-2 panel-0" src="keychains-festive.webp" alt="" loading="lazy" decoding="async"></span>
-              <span class="photo-name"><strong>Mini Clog Keychain</strong><small>White</small></span>
-            </span>
-          </label>
-          <label class="choice ">
-            <input type="radio" name="print" value="Octagon Fidget Keychain (Burgundy)" >
-            <span class="photo-card">
-              <span class="product-window"><img class="panel-image panels-3 panel-1" src="prints-festive.webp" alt="" loading="lazy" decoding="async"></span>
-              <span class="photo-name"><strong>Octagon Fidget Keychain</strong><small>Burgundy</small></span>
-            </span>
-          </label>
-          <label class="choice ">
-            <input type="radio" name="print" value="Octagon Fidget Keychain (Orange)" >
-            <span class="photo-card">
-              <span class="product-window"><img class="panel-image panels-2 panel-1" src="keychains-festive.webp" alt="" loading="lazy" decoding="async"></span>
-              <span class="photo-name"><strong>Octagon Fidget Keychain</strong><small>Orange</small></span>
-            </span>
-          </label>
-          <label class="choice ">
-            <input type="radio" name="print" value="Flexi Elf Keychain (Red and white)" >
-            <span class="photo-card">
-              <span class="product-window"><img class="panel-image panels-3 panel-2" src="prints-festive.webp" alt="" loading="lazy" decoding="async"></span>
-              <span class="photo-name"><strong>Flexi Elf Keychain</strong><small>Red and white</small></span>
-            </span>
-          </label>
-          <label class="choice ">
-            <input type="radio" name="print" value="Smiley Clicker (White and orange)" >
-            <span class="photo-card">
-              <img class="product-full" src="clicker-festive.webp" alt="" width="720" height="576" loading="lazy" decoding="async">
-              <span class="photo-name"><strong>Smiley Clicker</strong><small>White and orange</small></span>
-            </span>
-          </label>
-          <label class="choice ">
-            <input type="radio" name="print" value="Folding Cube Fidget (Multicolor)" >
-            <span class="photo-card">
-              <span class="product-window"><img class="panel-image panels-3 panel-0" src="prints-festive.webp" alt="" loading="lazy" decoding="async"></span>
-              <span class="photo-name"><strong>Folding Cube Fidget</strong><small>Multicolor</small></span>
-            </span>
-          </label>
-          <label class="choice ">
-            <input type="radio" name="print" value="You Brighten This Room (Brown sign)" >
-            <span class="photo-card">
-              <img class="product-full" src="brighten-festive.webp" alt="" width="720" height="576" loading="lazy" decoding="async">
-              <span class="photo-name"><strong>You Brighten This Room</strong><small>Brown sign · reverse reads “When You Leave”</small></span>
-            </span>
-          </label>
-          <label class="choice ">
-            <input type="radio" name="print" value="You Are My Favorite (White sign)" >
-            <span class="photo-card">
-              <img src="gram-sign-favorite.webp" alt="" width="720" height="576" loading="lazy" decoding="async">
-              <span class="photo-name"><strong>You Are My Favorite</strong><small>White sign · reverse reads “Person to Prank”</small></span>
-            </span>
-          </label>
-          <label class="choice ">
-            <input type="radio" name="print" value="Your Opinion Matters (Green sign)" >
-            <span class="photo-card">
-              <img class="product-full" src="opinion-festive.webp" alt="" width="720" height="576" loading="lazy" decoding="async">
-              <span class="photo-name"><strong>Your Opinion Matters</strong><small>Green sign · reverse reads “To Someone Probably”</small></span>
-            </span>
-          </label>
-<label class="choice"><input type="radio" name="print" value="Hang In There (Olive sign)"><span class="photo-card"><span class="product-window" style="aspect-ratio:2/3"><img class="panel-image panels-3 panel-0" src="more-signs-festive.webp" alt="" loading="lazy" decoding="async"></span><span class="photo-name"><strong>Hang In There</strong><small>Reverse reads “It Gets Worse” · one sign</small></span></span></label><label class="choice"><input type="radio" name="print" value="Have a Great Day (Red and white sign)"><span class="photo-card"><span class="product-window" style="aspect-ratio:2/3"><img class="panel-image panels-3 panel-2" src="more-signs-festive.webp" alt="" loading="lazy" decoding="async"></span><span class="photo-name"><strong>Have a Great Day</strong><small>Red and white · one sign</small></span></span></label>        </div>
-      </fieldset>
-
-      <fieldset class="option-section" id="extras-section" hidden disabled>
-        <legend><h2>Choose your pen topper and drink</h2></legend>
-        <p class="intro">The $5 package includes one mini multicolor pen with an interchangeable topper.</p>
-        <div class="pen-grid">
-          <label class="choice pen-choice">
-            <input type="radio" name="pen" value="French fries" >
-            <span class="photo-card">
-              <img src="gram-pen-fries.webp" alt="" width="420" height="480" loading="lazy" decoding="async">
-              <span class="photo-name"><strong>French fries</strong></span>
-            </span>
-          </label>
-          <label class="choice pen-choice">
-            <input type="radio" name="pen" value="Astronaut" >
-            <span class="photo-card">
-              <img src="gram-pen-astronaut.webp" alt="" width="420" height="480" loading="lazy" decoding="async">
-              <span class="photo-name"><strong>Astronaut</strong></span>
-            </span>
-          </label>
-          <label class="choice pen-choice">
-            <input type="radio" name="pen" value="Carrot" >
-            <span class="photo-card">
-              <img src="gram-pen-carrot.webp" alt="" width="420" height="480" loading="lazy" decoding="async">
-              <span class="photo-name"><strong>Carrot</strong></span>
-            </span>
-          </label>
-          <label class="choice pen-choice">
-            <input type="radio" name="pen" value="Brown character" >
-            <span class="photo-card">
-              <img src="gram-pen-brown.webp" alt="" width="420" height="480" loading="lazy" decoding="async">
-              <span class="photo-name"><strong>Brown character</strong></span>
-            </span>
-          </label>
-        </div>
-        <label class="pen-any"><input type="radio" name="pen" value="Surprise me" checked> Surprise me with a topper</label>
-        <div class="drink-choice">
-          <label class="stacked-label" for="drink-option">Drink preference</label>
-          <select id="drink-option" name="drink"><option value="">Choose your drink</option><option>Full-size Alani</option><option>Full-size Dr Pepper</option><option>Kool-Aid Jammers</option><option>LaCroix Lemon sparkling water</option><option>Other — write in request</option></select>
-          <div id="other-drink-wrap" hidden><label class="stacked-label" for="other-drink">Requested drink (if other)</label><input id="other-drink" name="otherDrink" type="text" maxlength="120" placeholder="For example: a flavor or another drink"><p class="form-hint">Requests are subject to availability; we will confirm if your request is available.</p></div>
-          <figure style="max-width:240px;margin:18px 0"><img src="lacroix-lemon-festive.webp" alt="Yellow LaCroix Lemon sparkling water can" style="width:100%;border-radius:18px" loading="lazy"><figcaption>Also available: LaCroix Lemon sparkling water. One drink with your $5 package. Background decorations not included.</figcaption></figure>
-          <p class="form-hint">Choose one: full-size Alani, full-size Dr Pepper, Kool-Aid Jammers, or LaCroix Lemon sparkling water. No mini cans. Availability will be confirmed.</p>
-        </div>
-      </fieldset>
-
-      <fieldset class="option-section" id="simmer-add-on" hidden disabled>
-        <legend><h2>Add a little extra for $2</h2></legend>
-        <p class="intro">Add a sachet or drink to any order for $2 each, while supplies last.</p>
-        <label><input type="radio" name="addon" id="addon-none" value="None" checked> No add-on</label>
-        <label><input type="radio" name="addon" value="Simmer Pot Kit"> +$2 Simmer Pot Kit — unscented dried fruit and spices for simmering in water on the stove</label>
-        <label><input type="radio" name="addon" value="Apple Cinnamon Sachet"> +$2 Apple Cinnamon Sachet — pre-scented potpourri for car, bathroom, or closet</label>
-        <p class="form-hint">The sachet is for passive fragrance only. Do not heat, simmer, or consume it. Never leave a simmer pot unattended.</p>
-      </fieldset>
-      <div class="order-actions" id="order-actions">
-        <p role="status" aria-atomic="true"><strong id="order-summary">Your Gobble Gram</strong>
-          <small id="order-hint">Browse here or go straight to the order form.</small></p>
-        <a class="btn btn-primary" id="continue-order" href="https://form.jotform.com/263168212099056">Continue to order →</a>
-      </div>
-      <p class="form-hint order-footnote">The next page is the order form. Review your choices, add your message and recipient, then submit. No payment is collected by this button.</p>
-    </form>
-    <noscript><p class="shell">Open the <a href="https://form.jotform.com/263168212099056">Gobble Gram order form</a> to choose the free resident note or a paid package.</p></noscript>
-
+    <section class="shell" id="gift-gallery" style="padding:2rem 0">
+<style>
+.tsr-package-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.tsr-package{border:2px solid #d8b695;border-radius:24px;background:#fffaf1;overflow:hidden;padding:20px;box-shadow:0 8px 20px #39231b0a}
+.tsr-package h3{font-size:1.4rem;margin:0 0 8px}.tsr-package p{line-height:1.55}
+.tsr-components{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tsr-component{margin:0;background:#fff;border-radius:15px;overflow:hidden;border:1px solid #eadbca}
+.tsr-component img{width:100%;height:200px;object-fit:contain;display:block;background:#fff}
+.tsr-component figcaption{padding:8px;text-align:center;font-size:.82rem;font-weight:650;line-height:1.3}
+.tsr-message{background:#f9e4b9;border-radius:15px;padding:16px;text-align:center;font-size:1.1rem;margin:10px 0}
+.tsr-note{font-size:.9rem;color:#634b3c}
+@media(max-width:650px){.tsr-package-grid{grid-template-columns:1fr}.tsr-component img{height:180px}.tsr-package{padding:16px}}
+</style>
+<style>
+.surprise-offer{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:30px;border:3px solid #cb6d29;border-radius:24px;background:linear-gradient(110deg,#ffe294,#fff4d7);box-shadow:0 8px 0 #ead2a9;margin:0 0 34px}
+.surprise-offer>div{flex:1;min-width:0}.surprise-offer .kicker{display:inline-block;background:#963f22;color:#fff9ec;border-radius:9px;padding:7px 15px;font-size:22px;font-weight:900;letter-spacing:.08em;transform:rotate(-2deg);margin:0}
+.surprise-offer h2{font-size:clamp(30px,4vw,52px);font-weight:700;color:#963f22;margin:14px 0 10px;letter-spacing:-.035em}.surprise-offer p:not(.kicker){font-size:18px;margin:0;max-width:660px;color:var(--quiet)}.surprise-offer .btn{flex-shrink:0}.surprise-offer .surprise-details{margin-top:10px!important;font-size:16px!important}
+@media(max-width:850px){.surprise-offer{flex-direction:column;align-items:flex-start;padding:24px}.surprise-offer .btn{white-space:normal;max-width:100%;text-align:center}.surprise-offer .kicker{font-size:18px}}
+</style>
+<aside class="surprise-offer" id="gobble-surprise" aria-label="Now Offering: $3 Gobble Surprise!"><div><p class="kicker">NOW OFFERING:</p><h2>$3 Gobble Surprise!</h2><p>Not sure what to send? Let us do the work.</p><p class="surprise-details">Surprise treats + your personal message. We choose the treats for you!</p></div><a class="btn btn-primary" href="https://form.jotform.com/263168212099056?q6_radio4=%243%20%E2%80%94%20Gobble%20Surprise">Send a $3 Gobble Surprise</a></aside><h2>Choose your Gobble Gram</h2>
+<figure class="tsr-approved-preview" style="margin:20px 0 28px">
+<a href="tsr-approved-gobble-preview.webp?v=2" target="_blank" rel="noopener" aria-label="Open the approved Gobble Gram package illustration full size">
+<img src="tsr-approved-gobble-preview.webp?v=2" width="1254" height="1254" alt="Illustrated Gobble Gram examples: $1 message, $2 message with a choice of Cheez-Its or candy, $3 message with candy and a drink, and $5 message with candy, drink and a 3D printed keychain." style="display:block;width:100%;height:auto;max-width:1000px;margin:auto;border-radius:20px" loading="eager">
+</a>
+<figcaption style="font-size:.9rem;line-height:1.5;text-align:center;margin-top:12px">AI-illustrated package examples based on our product photos, not exact photographs of finished orders. Actual items and packaging may vary. Decorative leaves and fabric are not included. Tap the picture to view it larger.</figcaption>
+</figure>
+<p>Start with a kind message, then add a little happiness. Choose your items in the order form; availability may vary.</p>
+<div class="tsr-package-grid">
+<article class="tsr-package"><h3>$1 · A message to make their day</h3><div class="tsr-message">“You make our days brighter!”</div><p>A cute, personalized Gobble Gram message. No treat included.</p><p class="tsr-note">Residents can send a message free.</p></article>
+<article class="tsr-package"><h3>$2 · Message + a little treat</h3><div class="tsr-message">“You’re amazing. Here’s a little happy!”</div><p>Your message plus a treat. Choose from the available candy and snack options in the order form.</p></article>
+<article class="tsr-package"><h3>$3 · Message + mini candies + drink</h3><div class="tsr-message">“A sweet thank-you and a little sip!”</div><p>A personal message, mini candies, and one drink. Choose your drink in the order form.</p><p class="tsr-note">One drink, not a 3D print, is included at this tier.</p></article>
+<article class="tsr-package"><h3>$5 · Message + treat + drink + 3D print + mini pen</h3><div class="tsr-message">“You’re one of a kind!”</div><p>A personal message, a treat, one drink, one fun 3D print, and a mini pen. Choose from the available options.</p></article>
+</div>
+<p style="text-align:center;margin:24px 0"><a class="btn btn-primary" href="https://form.jotform.com/263168212099056">Pick your package &amp; personalize it</a></p>
+<h2 id="prints">A peek at the 3D print choices</h2>
+<p>Pick a favorite in your order. Colors and availability may vary; background decorations aren't included.</p>
+<div class="seasonal-grid">
+<article class="seasonal-card"><img class="seasonal-photo" src="keychains-festive.webp" alt="Mini clog and octagon keychain 3D print examples" loading="lazy"><h3>Fun keychains</h3></article>
+<article class="seasonal-card"><img class="seasonal-photo" src="prints-festive.webp" alt="Fidget and keychain 3D print examples" loading="lazy"><h3>Fidgets and more</h3></article>
+<article class="seasonal-card"><img class="seasonal-photo" src="gram-sign-favorite.webp" alt="You Are My Favorite novelty sign 3D print" loading="lazy"><h3>Little message signs</h3></article>
+<article class="seasonal-card"><img class="seasonal-photo" src="clicker-festive.webp" alt="Smiley clicker 3D print example" loading="lazy"><h3>Smiley clicker</h3></article>
+</div><p>Want to personalize a print? Add your request in the order form and we'll confirm what's possible.</p>
+<a class="btn btn-primary" href="https://form.jotform.com/263168212099056">Choose your Gobble Gram</a>
+</section>
+    <section class="shell" id="packages" style="padding:2rem 0;text-align:center"><h2>Choose your Gobble Gram in one easy form</h2><p>Pick your package, choose any $2 extras, write your message, and submit your order—all in one place. Free resident notes are available too.</p><a class="btn btn-primary" href="https://form.jotform.com/263168212099056">Build your Gobble Gram</a><p>Payment instructions appear in the order form. Payment is verified separately.</p></section>
     <section id="seasonal" class="seasonal-showcase shell">
-      <div class="special-badge">THIS WEEK’S SPECIAL <strong>+$2 ADD-ON</strong></div><h2>Pick a little cozy for their bag!</h2>
-      <p>Two different treats for the senses. Add either one to any paid Gobble Gram for <strong>just $2 more</strong>.</p>
-      <div class="seasonal-grid">
-        <article class="seasonal-card sachet-card"><img class="seasonal-photo" src="gram-sachets-styled.webp" alt="Example organza potpourri sachets" loading="lazy"><span class="price-tag">+$2</span><h3>Apple Cinnamon Sachet</h3><p>Pre-scented potpourri for a car, bathroom, or closet. A cozy little pick-me-up, ready to enjoy.</p><p class="safety">Passive fragrance only. Do not heat, simmer, or consume.</p></article>
-        <article class="seasonal-card pot-card"><img class="seasonal-photo" src="gram-simmer-styled.webp" alt="Example clear simmer-pot gift bag with dried citrus and cinnamon" loading="lazy"><span class="price-tag">+$2</span><h3>Simmer Pot Kit</h3><p>Unscented dried fruit and spices to simmer in water on the stove for a warm, welcoming aroma.</p><p class="safety">Never leave a simmer pot unattended. Not for eating.</p></article>
-      </div>
-      <p class="seasonal-note">Choose one sachet or one simmer kit. Packaging varies; photo decorations are not included.</p><p class="seasonal-note">This week only · While supplies last · Choose one add-on with a paid package.</p>
-      <a class="btn btn-primary" href="https://form.jotform.com/263168212099056">Choose a package + cozy add-on →</a>
-    </section>
+<div class="special-badge">A LITTLE EXTRA GOBBLE <strong>+$2 EACH</strong></div><h2>A little more to make them smile</h2>
+<p>Add a <strong>3D print</strong>, <strong>simmer pot bag</strong>, <strong>apple cinnamon sachet</strong>, or <strong>extra drink</strong> to any order for <strong>$2 each</strong>. Choose any combination in the order form. Two extras add $4.</p>
+<div class="seasonal-grid">
+<article class="seasonal-card"><img class="seasonal-photo" src="turkeys-festive.webp" alt="Example 3D printed turkeys" loading="lazy"><span class="price-tag">+$2</span><h3>One 3D print</h3><p>Pick one extra keepsake. The $5 package already includes one print; this adds another. Choose your extra print in the order form.</p></article>
+<article class="seasonal-card"><img class="seasonal-photo" src="gram-simmer-styled.webp" alt="Example simmer pot gift bag" loading="lazy"><span class="price-tag">+$2</span><h3>Simmer pot bag</h3><p>Dried fruit and spices to simmer in water for a cozy aroma.</p><p class="safety">Never leave a simmer pot unattended. Not for eating.</p></article>
+<article class="seasonal-card"><img class="seasonal-photo" src="gram-sachets-styled.webp" alt="Apple cinnamon sachet example" loading="lazy"><span class="price-tag">+$2</span><h3>Apple cinnamon sachet</h3><p>A scented sachet for your car, bathroom, or closet. Keep dry; this is separate from the simmer pot kit.</p></article>
+<article class="seasonal-card"><img class="seasonal-photo" src="lacroix-lemon-festive.webp" alt="One example of an available drink" loading="lazy"><span class="price-tag">+$2</span><h3>One extra drink</h3><p>Add one drink to any package or free resident note. The regular $3 and $5 packages already include one drink.</p></article>
+</div><p class="seasonal-note">Subject to availability. Free resident messages remain free; extras are $2 each. Photos are examples; decorations are not included.</p>
+<a class="btn btn-primary" href="https://form.jotform.com/263168212099056">Choose your Gobble Gram</a></section>
     <section class="payment" id="pay" aria-labelledby="payment-heading">
       <div class="shell">
         <div>
           <h2 id="payment-heading">Payment options</h2>
           <p>For paid Gobble Grams, submit your order and choose a payment method.</p>
           <h3>Cash</h3>
-          <p>Give cash payments to Lindsey or Carrie and give them the sender name on your order.</p>
+          <p>Give cash to Lindsey or Carrie and tell them the sender name on your order.</p>
           <h3>Cash App</h3>
-          <p>Send the package price using the name or QR code below.</p>
+          <p>Send your full order total, including selected extras, using the name or QR code below. Pay only once; payment is verified separately.</p>
           <p class="cash-name" id="cashtag">$GeeZoMathis</p>
           <div class="cash-actions">
             <button class="btn" type="button" id="copy-cashtag">Copy $Cashtag</button>
-            <a href="https://cash.app/" target="_blank" rel="noopener noreferrer">Open Cash App</a>
+            <a href="https://cash.app/$GeeZoMathis" target="_blank" rel="noopener noreferrer">Open Cash App</a>
           </div>
           <p class="pay-note">Keep resident names and details out of your Cash App note.</p>
           <h3>Venmo</h3>
