@@ -1,5 +1,28 @@
 # Public Gobble Gram launch review
 
+## Latest review — publication on hold
+
+Current instruction: prepare the separate public site and existing public Jotform for side-by-side review; run exactly one clearly labeled no-payment public test; await explicit approval before publishing these website changes. Do not share/promote the public URL yet. The earlier separately published public version remains unchanged by this draft.
+
+Draft changes: feature the $12 Deluxe Gram, add Order for Your Team buttons, preselect the Deluxe/team choices on the team form link, and remove unconfirmed profit-beneficiary claims. Existing public form introduction updated to match. The Deluxe ladder, free arranged pickup in Liberty/Tiffany Springs, local delivery subject to fee confirmation, and manual Cash App/Venmo instructions already match.
+
+Quantity has minimum 1, Numeric validation and zero decimal places in field settings. The available editor cannot guarantee fractional-input rejection; verify quantity manually before confirming total. No automatic discount calculator or payment processing is active.
+
+Protected scope: index.html, gobble-grams.html, gobble-grams.js, gobble-grams.css, CNAME, every QR/image asset, and TSR form 263168212099056 must remain untouched in this review.
+
+Review source: public-order-review.html (two panes: website draft and existing public form). Changes are held on review/public-deluxe-20261119, separate from main.
+
+New public test completed: TEST PUBLIC REVIEW ONLY / TEST TEAM — DO NOT FULFILL; five Deluxe gifts, Liberty arranged pickup, Venmo preference. Expected manual quote $55 (5 × $11). Personal message and fulfillment instructions explicitly say TEST ONLY / DO NOT FULFILL / NO PAYMENT SENT OR OWED. Browser displayed Thank You and the public submission count increased from 2 to 3. No payment sent, no actual pickup arranged. This verifies order receipt, not email delivery or payment reconciliation.
+
+Verified new team link preselects the Whole team/crew order and $12 Deluxe using public-form unique names; the final draft also defaults team quantity to 5. Verified the Optional Drink field appears only for $5/$8 and is cleared when switching to Deluxe, which already includes a drink.
+
+QA: all local product assets exist; anchors resolve; all order links target only public form 263217846661059; unconfirmed beneficiary/profit wording removed from draft; protected TSR files match baseline. Side-by-side preview loaded both real panes. No website changes merged to main or deployed in this review.
+
+---
+
+The historical launch notes below describe the earlier public version; they are not authorization to publish this new draft.
+
+
 ## Current status
 
 The existing public Jotform is updated LIVE under Lindsey's explicit approval. Two no-payment browser tests succeeded and both notifications were delivered to gluegunsandgossip@gmail.com.
