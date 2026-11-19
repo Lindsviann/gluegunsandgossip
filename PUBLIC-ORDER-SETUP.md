@@ -4,11 +4,11 @@
 
 The existing public Jotform is updated LIVE under Lindsey's explicit approval. Two no-payment browser tests succeeded and both notifications were delivered to gluegunsandgossip@gmail.com.
 
-Website publishing, exact Deluxe bulk prices and card checkout have NOT been activated. The separate website and proposed prices are staged on codex/public-gobble-order-review-20261118 in draft PR #1. Do not merge or deploy without explicit approval.
+Lindsey approved the Deluxe price ladder and separate-page publication after confirming that 100 gifts at $7 each total $700. Publication is now in progress from PR #1. Card checkout remains OFF and is not authorized.
 
 Existing public form: https://form.jotform.com/263217846661059
-Proposed separate public page file: public-gobble-grams.html
-Review page file: public-preview.html
+Approved separate public page file: public-gobble-grams.html
+Old review URL: public-preview.html redirects to public-gobble-grams.html after publication.
 
 ## Protected TSR flow
 
@@ -43,9 +43,9 @@ Payment note: purchaser first/last name and Gobble Gram order. No recipient/priv
 
 The user clarified that the discounts apply ONLY to the $12 Deluxe package. The $5/$8 packages remain at their regular prices.
 
-Live form wording advertises Deluxe discounts at 5+, 10+, 25+, 50+, 100+ gifts, with a confirmed quote before payment. No specific numerical reductions were activated in the live form.
+The live form bulk explanation is being updated to the approved unit-price ladder. Final availability, fulfillment, delivery fees if any and totals remain manually confirmed before payment.
 
-The staged website pages show this PROPOSAL for approval:
+Approved Deluxe pricing:
 
 | Quantity | Deluxe price per gift |
 | --- | --- |
@@ -56,7 +56,7 @@ The staged website pages show this PROPOSAL for approval:
 | 50–99 | $8 |
 | 100+ | $7 |
 
-This follows Lindsey's $1-per-tier suggestion. Product/labor costs have not been provided, so profitability is not verified.
+This is Lindsey's approved $1-per-tier ladder.
 
 ## Tests and notifications
 
@@ -77,9 +77,9 @@ This follows Lindsey's $1-per-tier suggestion. Product/labor costs have not been
 - This workflow confirms orders and totals manually; there is no automatic discount calculation or payment reconciliation.
 - Delivery address is not conditionally required. Missing details must be resolved during confirmation before accepting payment.
 - Native Jotform browser settings did not retain Google sign-in; connected Jotform editing completed the saved field/settings work. Custom subject/body/thank-you text was not verified; the delivered default notification is adequate and includes final order answers.
-- The live form remains the existing enabled form. The website pages have NOT been published from this branch, and card checkout remains off.
+- The live form remains the existing enabled form. Publication has been approved and is in progress. Card checkout remains off.
 
-After explicit approval of prices and publication:
+Approved launch steps:
 1. Add the approved Deluxe unit-price ladder to the existing live form's bulk explanation, preserving manual confirmation and regular $5/$8 prices.
 2. Publish the separate public-gobble-grams.html page from the reviewed branch. Do not replace root index.html or alter the posted QR.
 3. Confirm only the public HTML pages/note differ, then merge/publish and verify the separate page's direct URL.
