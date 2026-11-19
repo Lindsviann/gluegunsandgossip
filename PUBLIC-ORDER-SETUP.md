@@ -1,37 +1,53 @@
 # Public Gobble Gram launch review
 
-## Authorization and boundaries
+## Current status
 
-Lindsey approved LIVE edits to existing public Jotform 263217846661059, notification setup, and no-payment testing. Website publication and paid/card checkout still require explicit approval.
+The existing public Jotform is updated LIVE under Lindsey's explicit approval. Two no-payment browser tests succeeded and both notifications were delivered to gluegunsandgossip@gmail.com.
 
-Do not modify the TSR form 263168212099056, index.html, gobble-grams.html, shared CSS/JS, CNAME, existing QR code or QR destination. The public website review changes only public-preview.html and this setup note on branch codex/public-gobble-order-review-20261118. Do not merge or deploy yet.
+Website publishing, exact Deluxe bulk prices and card checkout have NOT been activated. The separate website and proposed prices are staged on codex/public-gobble-order-review-20261118 in draft PR #1. Do not merge or deploy without explicit approval.
 
-## Existing public form
+Existing public form: https://form.jotform.com/263217846661059
+Proposed separate public page file: public-gobble-grams.html
+Review page file: public-preview.html
 
-https://form.jotform.com/263217846661059
+## Protected TSR flow
 
-Saved working fields include package choices ($5 Little Gobble / $8 Gobble Surprise / $12 Deluxe), purchaser details, recipient or team name, individual/team order type, team recipient/message notes, sender/anonymous choice, own-message/write-one choice, preferences, quantity, fulfillment, manual payment choice and acknowledgement.
+Do not modify TSR form 263168212099056, index.html, gobble-grams.html, shared CSS/JS, CNAME, QR/image files, or the posted QR destination.
 
-- $5: message and two wrapped treats; optional drink +$2 per gift.
-- $8: message, two wrapped treats and surprise 3D gift; optional drink +$2 per gift.
-- $12: message, two wrapped treats, included drink and larger surprise 3D gift.
-- Final availability, fulfillment, delivery fee if applicable and total are confirmed before payment.
-- Free arranged pickup in Liberty or Tiffany Springs; local delivery by arrangement.
-- The form collects a request, not an automatic payment.
-- Cash App: $GeeZoMathis, https://cash.app/$GeeZoMathis
-- Venmo: @Lindsey-Mathis-1, https://venmo.com/u/Lindsey-Mathis-1
-- Payment note: purchaser first/last name and Gobble Gram order; no recipient/private delivery information.
-- No card gateway was activated.
+Verified main index.html blob unchanged: 40617129ad600c420f708459089c4cf19b2008ab.
+Verified CNAME unchanged: 0f3d6116f1e7c26a448fe6d4f5baf9401e0ce48a.
 
-## Deluxe bulk clarification
+The website branch changes only the two public HTML pages and this note. The root homepage and domain are preserved.
 
-Whole-team/crew ordering is available. Bulk discounts apply ONLY to the $12 Deluxe package, at 5+, 10+, 25+, 50+, 100+ gifts. The $5/$8 prices do not receive this discount.
+## Live public order form
 
-The live form and website draft say that a discounted quote is confirmed before payment. No numerical discount was activated.
+- Required purchaser full name and email, optional phone.
+- Recipient or team name; individual/small order or whole-team/crew order.
+- Optional team/company name and recipient/message list.
+- Named or anonymous recipient-facing sender; purchaser contact still goes to the organizer.
+- Own message or write-one-for-me option, interests/favorite colour, sweet/salty/surprise preference.
+- $5 Little Gobble: message and two wrapped treats; optional drink +$2 per gift.
+- $8 Gobble Surprise: message, two wrapped treats and surprise 3D gift; optional drink +$2 per gift.
+- $12 Deluxe: message, two wrapped treats, included drink and larger surprise 3D gift.
+- One required quantity question, default 1, configured minimum 1 / zero decimal places.
+- Free arranged pickup in Liberty or Tiffany Springs, or local delivery request; date/time and instructions subject to confirmation.
+- Delivery address and food-allergy/scent notes are optional visible questions. Original address/notes fields were hidden without deleting their old data.
+- Cash App or Venmo preference and required pending-confirmation/payment acknowledgement.
+- Payment is required before preparation AFTER availability, fulfillment, delivery fee if any and final total are confirmed. This is a manual order request, not checkout.
 
-Proposed ladder for owner review only:
+Cash App: $GeeZoMathis — https://cash.app/$GeeZoMathis
+Venmo: @Lindsey-Mathis-1 — https://venmo.com/u/Lindsey-Mathis-1
+Payment note: purchaser first/last name and Gobble Gram order. No recipient/private delivery data. Pay only once.
 
-| Quantity | Deluxe unit price |
+## Deluxe-only bulk pricing
+
+The user clarified that the discounts apply ONLY to the $12 Deluxe package. The $5/$8 packages remain at their regular prices.
+
+Live form wording advertises Deluxe discounts at 5+, 10+, 25+, 50+, 100+ gifts, with a confirmed quote before payment. No specific numerical reductions were activated in the live form.
+
+The staged website pages show this PROPOSAL for approval:
+
+| Quantity | Deluxe price per gift |
 | --- | --- |
 | 1–4 | $12 |
 | 5–9 | $11 |
@@ -40,32 +56,31 @@ Proposed ladder for owner review only:
 | 50–99 | $8 |
 | 100+ | $7 |
 
-This follows Lindsey's suggested $1-per-tier idea. Actual product/labor costs and profitability have not been supplied or verified; do not describe these prices as guaranteed profitable. Obtain price approval before showing these specific amounts publicly.
+This follows Lindsey's $1-per-tier suggestion. Product/labor costs have not been provided, so profitability is not verified.
 
-## Notification and test evidence
+## Tests and notifications
 
-- Jotform reported Notification 1 enabled with only gluegunsandgossip@gmail.com as recipient.
-- Test submission 6708634356818686871 succeeded in the browser, with a Thank You confirmation. It is labelled TEST ONLY — DO NOT FULFILL — NO PAYMENT.
-- Test: 5 Deluxe gifts, team/crew order, own message, Liberty pickup, Venmo preference, no actual payment or preparation.
-- The corresponding Jotform email was found and read in the actual gluegunsandgossip@gmail.com Gmail inbox. It contains team, package, quantity, message, fulfillment and payment preference.
-- The email omits the original purchaser name/email even though the submission data itself contains them. A live repair request to replace the original purchaser/contact/address/allergy questions is currently processing; verify its result and send a second labelled test before calling that repair complete.
-- The connected Gmail plugin account is lindsviann@gmail.com; the business inbox was verified through the authorized browser after Google verification.
-- Jotform browser settings did not retain the Google sign-in. Do not claim native builder access succeeded.
+- Native notification verified enabled with gluegunsandgossip@gmail.com as its only fixed recipient; recheck reported it already correct and unchanged.
+- Test 1: submission 6708634356818686871. Five Deluxe team gifts, own message, Liberty pickup, Venmo preference. Browser thank-you and delivered business-inbox notification verified.
+- Test 2: submission 6708648506818567691. One $8 gift plus optional $2 drink, anonymous sender, write-one-for-me, local-delivery request, Cash App preference. Browser thank-you and delivered business-inbox notification verified.
+- The final test email includes purchaser full name/email, recipient, message option, package, quantity, drink, delivery address/instructions, food/scent notes and payment preference.
+- Both records are labelled TEST ONLY — DO NOT FULFILL — NO PAYMENT. No money sent or actual fulfillment requested.
+- The original purchaser fields were repaired after the first notification omitted contact; the final notification confirms the repair.
+- Required-field validation and zero-quantity rejection were tested. Zero displays a minimum-value error.
+- Integer-only enforcement is not fully proven; native step is any. Do not claim all fractional-input cases were tested.
+- All website form links target the SAME existing public form. No duplicate website builder.
+- Catalog images and the Deluxe ladder rendered in the browser; anchor/HTML checks passed.
+- Gmail business inbox was verified in the authorized browser because the Gmail plugin is connected to the personal inbox.
 
-## Validation
+## Limits and launch steps
 
-- Browser verified empty required fields are rejected.
-- The original Quantity allowed zero. It was replaced with one required Quantity question, default 1 and configured minimum 1 / zero decimal places.
-- Browser verified zero is now rejected with "Input should not be less than the minimum value: 1."
-- Integer-only enforcement is not yet proven. Native number input uses step=any; a 1.5 validation check needs follow-up.
-- Conditional hiding/required-address logic, custom subtotal, and custom thank-you text have not been verified. The current flow uses manual confirmation/quoting, not automatic checkout. Do not claim those features are complete.
-- Website review rendered with catalog images loaded and the correct public-form links.
+- This workflow confirms orders and totals manually; there is no automatic discount calculation or payment reconciliation.
+- Delivery address is not conditionally required. Missing details must be resolved during confirmation before accepting payment.
+- Native Jotform browser settings did not retain Google sign-in; connected Jotform editing completed the saved field/settings work. Custom subject/body/thank-you text was not verified; the delivered default notification is adequate and includes final order answers.
+- The live form remains the existing enabled form. The website pages have NOT been published from this branch, and card checkout remains off.
 
-## Next actions
-
-1. Wait for the purchaser/contact repair to finish; inspect current form.
-2. Submit a second clearly labelled no-payment test, covering Cash App and purchaser contact delivery in the notification.
-3. Verify the resulting order data and business-inbox notification.
-4. Record remaining verification limitations accurately.
-5. Obtain approval for exact Deluxe price ladder and separate website publication.
-6. Before publishing, remove review-only banner/copy and verify the final diff still excludes all protected TSR/domain/QR files.
+After explicit approval of prices and publication:
+1. Add the approved Deluxe unit-price ladder to the existing live form's bulk explanation, preserving manual confirmation and regular $5/$8 prices.
+2. Publish the separate public-gobble-grams.html page from the reviewed branch. Do not replace root index.html or alter the posted QR.
+3. Confirm only the public HTML pages/note differ, then merge/publish and verify the separate page's direct URL.
+4. Do not activate card checkout without a separate explicit instruction.
