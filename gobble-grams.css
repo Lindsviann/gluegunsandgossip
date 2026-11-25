@@ -463,3 +463,73 @@ footer a { margin-left: 8px; text-underline-offset: 3px; }
 
 /* Four-part bundle previews use actual existing site photos */
 .bundle-visual{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:8px;background:#fff7e8;min-height:175px;align-items:stretch}.bundle-visual>img{width:100%;height:125px;object-fit:contain;background:#fff;border-radius:10px}.bundle-visual>img:only-child{grid-column:1/-1;height:175px}.sample-message{background:#fffdf5;border:2px dashed #d88a53;border-radius:10px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8px;font-weight:800;color:#8b3d27;font-size:1rem}.sample-message small{font-size:.75rem;font-weight:500;margin-top:8px;color:#604634}
+
+/* Last-chance promotions: Gobble Grams in candy colors; the basket in autumn colors. */
+:root { --background:#fff; --ink:#30294e; --quiet:#625e78; --accent:#6236aa; --accent-dark:#49247f; }
+.site-header { background:#30294e; }
+.site-header .shell { flex-wrap:wrap; padding-block:12px; }
+.site-nav { flex-wrap:wrap; }
+.site-nav a, .kicker, .hero figcaption { font-size:.875rem; }
+.last-chance-overview { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; padding-block:24px; }
+.last-chance-tile { display:flex; flex-direction:column; gap:10px; padding:26px; border-radius:23px; text-decoration:none; box-shadow:0 6px 0 #30294e12; }
+.last-chance-tile strong { font-size:clamp(2rem,3.8vw,3.4rem); line-height:1.04; letter-spacing:-.035em; }
+.last-chance-tile span { font-size:1rem; }
+.last-chance-tile .offer-name { font-size:1.1rem; font-weight:850; letter-spacing:.045em; }
+.last-chance-tile .offer-date { font-weight:750; }
+.last-chance-tile:hover { outline:3px solid currentColor; outline-offset:3px; }
+.gram-tile { background:#6236aa; color:#fff; }
+.gram-tile .offer-name { color:#ffe371; }
+.basket-tile { background:#a63416; color:#fff; }
+.basket-tile .offer-date { color:#ffe371; }
+.candy-hero { background:linear-gradient(115deg,#fff 10%,#f0eafe 100%); border-color:#e5d9f7; }
+.candy-hero h1 { color:#6236aa; font-family:system-ui,-apple-system,sans-serif; font-weight:900; letter-spacing:-.055em; }
+.candy-hero h1 em { color:#cc2f79; font-style:normal; }
+.candy-hero .hero-name { color:#08717e; font-size:1.4rem; font-weight:850; }
+.candy-hero figure { max-width:440px; justify-self:center; background:#f0eafe; border-color:#e5d9f7; box-shadow:none; }
+.candy-hero figure img { aspect-ratio:1; border-radius:16px; background:#f0eafe; }
+.candy-hero figcaption { font-size:.875rem; color:#4f4566; }
+#gobble-surprise { background:linear-gradient(110deg,#f0eafe,#e4f7f5); border-color:#6236aa; box-shadow:0 8px 0 #e4d7f8; }
+#gobble-surprise .kicker { display:flex; flex-direction:column; gap:9px; align-items:flex-start; background:transparent; color:#6236aa; padding:0; transform:none; letter-spacing:normal; }
+#gobble-surprise .kicker strong { font-size:clamp(2.1rem,4.5vw,3.8rem); line-height:1; letter-spacing:-.035em; }
+#gobble-surprise .kicker span { font-size:1rem; font-weight:750; }
+#gobble-surprise h2 { color:#6236aa; }
+#gobble-surprise .surprise-quick { border-color:#cbbbe4; }
+#gobble-surprise .surprise-quick summary { color:#49247f; }
+.holiday-drawings { padding-block:2rem; }
+.thanksgiving-feature { border:2px solid #d8a979; background:#fff7e9; border-radius:24px; overflow:hidden; scroll-margin-top:20px; }
+.basket-last-chance { display:flex; flex-direction:column; gap:10px; padding:25px; background:#a63416; color:#fff; text-align:center; }
+.basket-last-chance strong { font-size:clamp(2.5rem,6vw,4.75rem); line-height:1; letter-spacing:-.035em; }
+.basket-last-chance span { color:#ffe371; font-size:1rem; font-weight:800; }
+.basket-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:28px; padding:26px; align-items:start; }
+.basket-photo img { width:100%; height:auto; border-radius:14px; }
+.basket-copy { min-width:0; color:#682d1d; }
+.basket-copy h3 { font-size:1.65rem; line-height:1.15; margin:0 0 16px; }
+.basket-copy p { font-size:1rem; }
+.basket-prices { display:flex; flex-direction:column; gap:4px; color:#a63416; }
+.basket-prices strong { font-size:1.5rem; }
+.basket-payments { display:flex; flex-wrap:wrap; gap:12px; }
+.basket-payments .btn { color:#fff; background:#a63416; }
+.basket-payments .btn:hover { background:#7f2610; }
+.basket-qr-details { margin-top:24px; }
+.basket-qr-details summary { cursor:pointer; font-size:1rem; font-weight:750; }
+.basket-qr-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; padding-top:16px; }
+.basket-qr-grid figure { margin:0; min-width:0; }
+.basket-qr-grid img { width:100%; max-width:300px; height:auto; background:#fff; border-radius:12px; }
+.basket-qr-grid figcaption { margin-top:8px; font-size:.875rem; font-weight:650; overflow-wrap:anywhere; }
+.squish-drawing { margin-top:22px; }
+@media(max-width:760px) {
+ .last-chance-overview { grid-template-columns:1fr; }
+ .last-chance-tile { padding:23px; }
+ .last-chance-tile strong { font-size:clamp(1.75rem,9vw,2.35rem); }
+ .basket-layout { grid-template-columns:1fr; padding:18px; gap:22px; }
+ .basket-last-chance { padding:22px 16px; }
+ .candy-hero figure { width:min(100%,340px); }
+ .candy-hero figure img { aspect-ratio:1; }
+}
+@media(max-width:460px) {
+ .basket-qr-grid { grid-template-columns:1fr; }
+ .basket-qr-grid img { width:min(100%,280px); }
+ .basket-payments .btn { width:100%; }
+}
+
+@media(max-width:760px){.basket-last-chance strong{font-size:clamp(1.8rem,8.8vw,3rem)}#gobble-surprise .kicker strong{font-size:clamp(1.65rem,8.2vw,2.4rem)}}
