@@ -24,6 +24,14 @@
   <main>
     
     <section class="last-chance-overview shell" aria-label="Last chance offers">
+      <div data-black-friday hidden>
+        <a class="last-chance-tile gram-tile" href="elf-mischief.html#black-friday">
+          <strong>BLACK FRIDAY</strong>
+          <span class="offer-name">ELF EMERGENCY KIT · $10</span>
+          <span>Pick three elf scenes · Liberty pickup</span>
+          <span class="offer-date">Through Friday, November 27</span>
+        </a>
+      </div>
       <a class="last-chance-tile gram-tile" href="#gobble-surprise">
         <strong>LAST CHANCE!</strong>
         <span class="offer-name">GOBBLE GRAMS</span>
@@ -31,6 +39,11 @@
         <span class="offer-date">Order by Friday, November 27</span>
       </a>
     </section>
+    <script>
+  if (Date.now() < Date.parse('2026-11-28T00:00:00-06:00')) {
+    document.querySelector('[data-black-friday]').hidden = false;
+  }
+</script>
     <section class="hero candy-hero" aria-labelledby="gobble-title">
       <div class="shell">
         <div>
