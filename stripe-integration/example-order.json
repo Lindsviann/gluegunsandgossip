@@ -1,0 +1,11 @@
+{
+  "orderRef": "GGS-DEMO-0001",
+  "confirmed": true,
+  "currency": "usd",
+  "daysUntilDue": 7,
+  "approvedTotal": 1200,
+  "fulfillment": "pickup",
+  "customer": { "name": "Sandbox example customer", "email": "customer@example.com" },
+  "lines": [{ "description": "SANDBOX EXAMPLE ONLY - craft kit", "unitAmount": 1200, "quantity": 1 }],
+  "tax": { "mode": "unconfirmed" }
+}

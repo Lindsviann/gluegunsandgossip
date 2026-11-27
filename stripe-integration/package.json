@@ -1,0 +1,14 @@
+{
+  "name": "gluegunsandgossip-stripe-sandbox",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24.0.0" },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "draft": "node src/create-draft.mjs",
+    "webhook": "node src/server.mjs",
+    "orders": "node src/list-orders.mjs"
+  },
+  "dependencies": { "stripe": "23.2.0" }
+}

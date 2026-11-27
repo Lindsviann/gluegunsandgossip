@@ -1,0 +1,2 @@
+#!/bin/sh
+exec node stripe-integration/scripts/check-secrets.mjs
